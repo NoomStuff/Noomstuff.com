@@ -1,0 +1,89 @@
+{
+    "redirects": [
+        {
+            "source": "/git",
+            "destination": "https://github.com/noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/github",
+            "destination": "https://github.com/noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/speedrun",
+            "destination": "https://www.speedrun.com/NoomPlatformer",
+            "permanent": true
+        },
+        {
+            "source": "/x",
+            "destination": "https://x.com/NoomStuff",
+            "permanent": true
+        },
+        {
+            "source": "/twitter",
+            "destination": "https://x.com/NoomStuff",
+            "permanent": true
+        },
+        {
+            "source": "/youtube",
+            "destination": "https://www.youtube.com/@NoomStuff",
+            "permanent": true
+        },
+        {
+            "source": "/bsky",
+            "destination": "https://bsky.app/profile/noomstuff.com",
+            "permanent": true
+        },
+        {
+            "source": "/bluesky",
+            "destination": "https://bsky.app/profile/noomstuff.com",
+            "permanent": true
+        },
+        {
+            "source": "/neocities",
+            "destination": "https://noomstuff.neocities.org",
+            "permanent": true
+        },
+        {
+            "source": "/itch",
+            "destination": "https://noomstuff.itch.io",
+            "permanent": true
+        },
+        {
+            "source": "/itch.io",
+            "destination": "https://noomstuff.itch.io",
+            "permanent": true
+        },
+        {
+            "source": "/reddit",
+            "destination": "https://reddit.com/u/noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/twitch",
+            "destination": "https://www.twitch.tv/noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/instagram",
+            "destination": "https://www.instagram.com/noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/facebook",
+            "destination": "https://www.facebook.com/noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/spotify",
+            "destination": "https://open.spotify.com/artist/25F77z70IT3oK0I4weGOym",
+            "permanent": true
+        },
+        {
+            "source": "/mastodon",
+            "destination": "https://mastodon.social/@noomstuff",
+            "permanent": true
+        }
+    ]
+}
