@@ -1,7 +1,7 @@
 const bannerBackground = document.getElementById('banner-background');
 
 // Create canvas
-canvas = document.createElement('canvas');
+const canvas = document.createElement('canvas');
 canvas.style.position = 'absolute';
 canvas.style.left = '0';
 canvas.style.top = '0';
@@ -11,6 +11,13 @@ canvas.style.zIndex = '-1';
 bannerBackground.appendChild(canvas);
 
 const context = canvas.getContext('2d');
+
+function setBannerHeight() {
+  const vh = window.innerHeight;
+  bannerBackground.style.height = vh + 'px';
+}
+setBannerHeight();
+window.addEventListener('resize', setBannerHeight);
 
 class TriangleParticle {
   constructor(rect) {
@@ -68,9 +75,11 @@ class TriangleParticle {
 
 let triangleParticles = [];
 
+
 function getBannerRect() {
   return bannerBackground.getBoundingClientRect();
 }
+
 
 function resizecanvas() {
   const rect = getBannerRect();
@@ -79,11 +88,15 @@ function resizecanvas() {
 }
 resizecanvas();
 window.addEventListener('resize', resizecanvas);
+window.addEventListener('resize', () => {
+  setBannerHeight();
+  resizecanvas();
+});
 
 function prewarmParticles() {
   const rect = getBannerRect();
   const widthFactor = rect.width / 1920;
-  const initialCount = Math.round(25 + widthFactor * 50);
+  const initialCount = Math.round(100 + widthFactor * 100);
   triangleParticles = [];
   for (let i = 0; i < initialCount; i++) {
     const particle = new TriangleParticle(rect);
