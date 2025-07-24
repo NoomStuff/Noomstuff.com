@@ -1,7 +1,7 @@
 const bannerBackground = document.getElementById('banner-background');
 
 // Create canvas
-const canvas = document.createElement('canvas');
+canvas = document.createElement('canvas');
 canvas.style.position = 'absolute';
 canvas.style.left = '0';
 canvas.style.top = '0';
@@ -11,16 +11,6 @@ canvas.style.zIndex = '-1';
 bannerBackground.appendChild(canvas);
 
 const context = canvas.getContext('2d');
-
-function setBannerHeight() {
-  // Always match the true viewport height
-  const vh = window.innerHeight;
-  bannerBackground.style.height = vh + 'px';
-}
-setBannerHeight();
-window.addEventListener('resize', setBannerHeight);
-window.addEventListener('orientationchange', setBannerHeight);
-window.addEventListener('scroll', setBannerHeight);
 
 class TriangleParticle {
   constructor(rect) {
@@ -78,22 +68,17 @@ class TriangleParticle {
 
 let triangleParticles = [];
 
-
 function getBannerRect() {
   return bannerBackground.getBoundingClientRect();
 }
 
-
 function resizecanvas() {
-  // Always match the rendered height of #banner-background
-  const rect = bannerBackground.getBoundingClientRect();
+  const rect = getBannerRect();
   canvas.width = rect.width;
   canvas.height = rect.height;
 }
 resizecanvas();
 window.addEventListener('resize', resizecanvas);
-window.addEventListener('orientationchange', resizecanvas);
-window.addEventListener('scroll', resizecanvas);
 
 function prewarmParticles() {
   const rect = getBannerRect();
@@ -118,7 +103,6 @@ function prewarmParticles() {
 }
 prewarmParticles();
 window.addEventListener('resize', prewarmParticles);
-window.addEventListener('orientationchange', prewarmParticles);
 
 function spawnParticle() {
   triangleParticles.push(new TriangleParticle(getBannerRect()));
