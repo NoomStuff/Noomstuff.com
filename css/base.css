@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&family=Noto+Sans+JP:wght@100..900&display=swap');
+
+:root {
+    --background-color: #0c080e;
+    --background-gradient: linear-gradient(145deg, #191928 0%, #16101a 50%, #231117 100%);
+    --text-color: #fff;
+    --text-light-color: rgba(255, 255, 255, 0.8);
+    --text-lighter-color: rgba(255, 255, 255, 0.6);
+    --font-family: "Noto Sans JP", "Roboto", Arial, Helvetica, sans-serif;
+
+    --spacing-1: 0.5rem;
+    --spacing-2: 1rem;
+    --spacing-3: 2rem;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: var(--background-color);
+}
+
+main, main > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+main {
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+section {
+    width: 100%;
+    max-width: 1200px;
+
+    @media screen and (max-width: 1280px) {
+        max-width: 1000px;
+    }
+
+    @media screen and (max-width: 1080px) {
+        max-width: 720px;
+    }
+
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+        padding: var(--spacing-3);
+    }
+}
+
+/* ===== Text ===== */
+
+p {
+    color: var(--text-light-color);
+    font-size: 1.2em;
+}
+
+b {
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-color);
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    margin-top: 0.5em;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-top: 15px;
+}
+
+h3 {
+    font-size: 2em;
+    margin-top: 10px;
+    font-weight: 300;
+}
