@@ -120,6 +120,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    text-align: left;
     gap: var(--spacing-2);
     padding: var(--spacing-2);
     border-radius: var(--spacing-2);
@@ -134,7 +135,14 @@
     margin: 0;
 }
 
+#introduction h2 {
+    @media screen and (max-width: 480px) {
+        font-size: 1.75em;
+    }
+}
+
 #introduction p {
+    width: 100%;
     font-size: 1.25em;
     font-weight: 300;
     color: var(--text-color-light);

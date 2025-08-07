@@ -84,7 +84,6 @@ function resizecanvas() {
   canvas.height = rect.height;
 }
 resizecanvas();
-window.addEventListener('resize', resizecanvas);
 
 function prewarmParticles() {
   const rect = getBannerRect();
@@ -116,7 +115,7 @@ function spawnParticle() {
 
 const rect = getBannerRect();
 const widthFactor = rect.width / 1920;
-const spawnInterval = Math.max(16, Math.round(60 - widthFactor * 40));
+const spawnInterval = Math.max(20, Math.round(60 - widthFactor * 40));
 setInterval(spawnParticle, spawnInterval);
 
 function animateParticles() {
