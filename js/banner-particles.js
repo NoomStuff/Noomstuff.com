@@ -75,7 +75,12 @@ function getBannerRect() {
 }
 
 function resizecanvas() {
-  // Only set canvas pixel size to match CSS size for sharpness
+  const vh = window.innerHeight;
+  bannerBackground.style.height = vh + 'px';
+  const banner = document.getElementById('banner');
+  if (banner) banner.style.height = vh + 'px';
+  canvas.style.height = vh + 'px';
+
   const rect = getBannerRect();
   canvas.width = rect.width;
   canvas.height = rect.height;
