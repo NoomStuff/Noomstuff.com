@@ -1,5 +1,6 @@
+/* Home banner gradient */
 #banner-background {
-    background: linear-gradient(145deg, #191928 0%, #16101a 50%, #231117 100%);
+    background: var(--background-gradient);
     height: 100vh;
     z-index: 1;
     overflow: hidden;
@@ -65,4 +66,76 @@
     @media screen and (max-width: 640px) {
         font-size: 1.2em;
     }
+}
+
+#banner-arrow {
+    position: absolute;
+    left: 50%;
+    bottom: var(--spacing-3);
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+#banner-arrow:hover {
+    cursor: pointer;
+}
+
+#banner-arrow i {
+    font-size: 2rem;
+    transition: color 0.3s ease;
+    color: var(--text-color-light);
+    animation: chevron-bounce 2.5s infinite cubic-bezier(0.25, 0.75, 0.5, 1.0);
+}
+
+#banner-arrow:hover i {
+    color: var(--text-color);
+}
+
+@keyframes chevron-bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(0.5rem);
+    }
+
+    20% {
+        transform: translateY(0.25rem);
+    }
+
+    30% {
+        transform: translateY(0.5rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* Introduction Section */
+#introduction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2);
+    border-radius: var(--spacing-2);
+    background-color: var(--background-color-light);
+
+    @media screen and (max-width: 640px) {
+        flex-direction: column;
+    }
+}
+
+#introduction * {
+    margin: 0;
+}
+
+#introduction p {
+    font-size: 1.25em;
+    font-weight: 300;
+    color: var(--text-color-light);
 }

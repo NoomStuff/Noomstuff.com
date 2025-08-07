@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/banner-transition.js" defer></script>
+    <script src="js/banner-particles.js" defer></script>
+    <script src="js/random-greeting.js" defer></script>
+    <script src="js/revolving-text.js" defer></script>
     <script src="https://kit.fontawesome.com/a7bbea504e.js" crossorigin="anonymous"></script>
     <link rel="icon" href="img/icon.png" type="image/x-icon">
     <meta name="description" content="NoomStuff.com - Parttime gamedev & artist, fulltime idiot.">
@@ -25,42 +27,61 @@
                     <h1 class="underline">NoomStuff.com</h1>
                     <h3 class="color-text-lighter">"Part-time gamedev & artist,<br>Full-time idiot"</h3>
                 </div>
+                <a href="#introduction" id="banner-arrow">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
             </section>
         </div>
 
-        <section class="underline">
-            <h2>This page is under construction...</h2>
-            <p>Check back later to see new content!</p>
+        <section id="introduction">
+            <figure class="profile-picture">
+                <img src="img/icon.png" alt="NoomStuff profile picture">
+            </figure>
+            <article>
+                <h2><span id="random-greeting">Hi</span>, I'm <span class=" text-gradient-light">NoomStuff</span></h2>
+                <p>Hobbyist <span id="revolving-text"></span></p>
+            </article>
         </section>
+
 
         <section class="grid-content">
             <article class="tile">
                 <figure>
-                    <img src="img/buzzinga/thumbnail.png" alt="Placeholder Image">
+                    <img src="img/buzzinga/thumbnail.png" alt="Buzzinga! game thumbnail">
                 </figure>
                 <h3>Buzzinga!</h3>
-                <p>Smack, slice and shoot yourself through hordes of enemies in an ever shrinking room.<br>Developed together with <a href="https://twitter.com/ItsPolyCube" target="_blank">Polycube</a>.</p>
-                <a href="https://polycube2.itch.io/buzzinga" target="_blank"  class="button bottom"><i class="fa-brands fa-itch-io"></i> View on Itch.io</a>
+                <p>Smack, slice and shoot yourself through hordes of enemies in an ever shrinking room.</p>
+                <p>Developed together with <a href="https://twitter.com/ItsPolyCube" target="_blank">Polycube</a>.</p>
+                <a href="https://polycube2.itch.io/buzzinga" target="_blank" class="button bottom"><i
+                        class="fa-brands fa-itch-io"></i> View on Itch.io</a>
             </article>
 
             <article class="tile">
                 <figure>
-                    <img src="img/dont-leaf-me-hangin/thumbnail.png" alt="Placeholder Image">
+                    <img src="img/dont-leaf-me-hangin/thumbnail.png" alt="Don't leaf me hangin' game thumbnail">
                 </figure>
                 <h3>Don't leaf me hangin'</h3>
-                <p>Scale down a mountain and into a cave, you can feel something is down there and you have to get to it. Watch your step and don't fall down.</p>
-                <a href="https://noomstuff.itch.io/dontleafmehangin" target="_blank" class="button bottom"><i class="fa-brands fa-itch-io"></i> View on Itch.io</a>
+                <p>Scale down a mountain and into a cave, you can feel something is down there and you have to get to
+                    it. Watch your step and don't fall down.</p>
+                <a href="https://noomstuff.itch.io/dontleafmehangin" target="_blank" class="button bottom"><i
+                        class="fa-brands fa-itch-io"></i> View on Itch.io</a>
             </article>
 
             <article class="tile">
                 <figure>
-                    <img src="img/noom-platformer/thumbnail.png" alt="Placeholder Image">
+                    <img src="img/noom-platformer/thumbnail.png" alt="Noom Platformer game thumbnail">
                 </figure>
                 <h3>Noom Platformer</h3>
                 <p>You tripped and fell down into a cave system, your
                     goal is to get strong enough to be able to exit the cave.</p>
-                <a href="https://noomstuff.itch.io/noomplatformer" target="_blank"  class="button bottom"><i class="fa-brands fa-itch-io"></i> View on Itch.io</a>
+                <a href="https://noomstuff.itch.io/noomplatformer" target="_blank" class="button bottom"><i
+                        class="fa-brands fa-itch-io"></i> View on Itch.io</a>
             </article>
+        </section>
+
+        <section class="underline">
+            <h2>This page is under construction...</h2>
+            <p>Check back later to see new content!</p>
         </section>
     </main>
 </body>
