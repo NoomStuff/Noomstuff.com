@@ -68,22 +68,20 @@ class TriangleParticle {
 
 let triangleParticles = [];
 
+let animationPaused = false;
+
 function getBannerRect() {
   return bannerBackground.getBoundingClientRect();
 }
 
 function resizecanvas() {
-  const vh = window.innerHeight;
-  bannerBackground.style.height = vh + 'px';
-  const banner = document.getElementById('banner');
-  if (banner) banner.style.height = vh + 'px';
-  canvas.style.height = vh + 'px';
-
+  // Only set canvas pixel size to match CSS size for sharpness
   const rect = getBannerRect();
   canvas.width = rect.width;
   canvas.height = rect.height;
 }
 resizecanvas();
+window.addEventListener('resize', resizecanvas);
 
 function prewarmParticles() {
   const rect = getBannerRect();
@@ -119,17 +117,29 @@ const spawnInterval = Math.max(20, Math.round(60 - widthFactor * 40));
 setInterval(spawnParticle, spawnInterval);
 
 function animateParticles() {
-  resizecanvas();
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  let aliveParticles = [];
-  for (let i = 0; i < triangleParticles.length; i++) {
-    const p = triangleParticles[i];
-    if (p.alive) {
-      p.updateParticle(context);
-      aliveParticles.push(p);
+  if (!animationPaused) {
+    resizecanvas();
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    let aliveParticles = [];
+    for (let i = 0; i < triangleParticles.length; i++) {
+      const p = triangleParticles[i];
+      if (p.alive) {
+        p.updateParticle(context);
+        aliveParticles.push(p);
+      }
     }
+    triangleParticles = aliveParticles;
   }
-  triangleParticles = aliveParticles;
   requestAnimationFrame(animateParticles);
 }
 animateParticles();
+
+function checkBannerView() {
+  const banner = document.getElementById('banner-background');
+  if (!banner) return;
+  const rect = banner.getBoundingClientRect();
+  animationPaused = rect.bottom < 0;
+}
+window.addEventListener('scroll', checkBannerView);
+window.addEventListener('resize', checkBannerView);
+checkBannerView();
