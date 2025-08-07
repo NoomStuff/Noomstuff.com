@@ -18,6 +18,10 @@
 .margin-right-2 { margin-right: var(--spacing-2); }
 .margin-right-3 { margin-right: var(--spacing-3); }
 
+.bottom { 
+    margin-top: auto !important;
+}
+
 /* Padding */
 .padding-0 { padding: 0; }
 .padding-1 { padding: var(--spacing-1); }
@@ -119,7 +123,7 @@ height: 100%; }
 .border-right { border-right: 1px solid var(--text-color); }
 
 .underline {
-border-bottom: 1px solid var(--text-color);
-padding-bottom: var(--spacing-2);
-margin-bottom: var(--spacing-2);
+    border-bottom: 1px solid var(--text-lighter-color);
+    padding-bottom: var(--spacing-2);
+    margin-bottom: var(--spacing-2);
 }

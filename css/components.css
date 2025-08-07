@@ -1,0 +1,44 @@
+.flex-content {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-3);
+    align-items: center;
+    width: 100%;
+}
+
+.grid-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-3);
+    width: 100%;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.tile>figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+
+.tile>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.tile>div>* {
+    margin: 0;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-2);
+}

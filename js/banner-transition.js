@@ -14,7 +14,7 @@ const context = canvas.getContext('2d');
 
 class TriangleParticle {
   constructor(rect) {
-    this.color = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
+    this.color = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim() || '#0c080e';
     this.x = -50 + Math.random() * (rect.width + 100);
     const center = rect.width / 2;
     const distanceFromCenter = Math.abs(this.x - center) / center;

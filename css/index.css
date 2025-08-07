@@ -27,6 +27,11 @@
     margin: 0;
 }
 
+#banner-text p {
+    font-size: 1.25em;
+    font-weight: 300;
+}
+
 #banner-text h1 {
     font-size: 6em;
     font-weight: 900;

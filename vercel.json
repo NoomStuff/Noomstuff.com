@@ -15,6 +15,11 @@
             "destination": "https://www.speedrun.com/NoomPlatformer",
             "permanent": true
         },
+                {
+            "source": "/speedrun.com",
+            "destination": "https://www.speedrun.com/NoomPlatformer",
+            "permanent": true
+        },
         {
             "source": "/x",
             "destination": "https://x.com/NoomStuff",
@@ -23,6 +28,11 @@
         {
             "source": "/twitter",
             "destination": "https://x.com/NoomStuff",
+            "permanent": true
+        },
+        {
+            "source": "/yt",
+            "destination": "https://www.youtube.com/@NoomStuff",
             "permanent": true
         },
         {
@@ -65,6 +75,11 @@
             "destination": "https://www.twitch.tv/noomstuff",
             "permanent": true
         },
+                {
+            "source": "/insta",
+            "destination": "https://www.instagram.com/noomstuff",
+            "permanent": true
+        },
         {
             "source": "/instagram",
             "destination": "https://www.instagram.com/noomstuff",
@@ -81,8 +96,13 @@
             "permanent": true
         },
         {
-            "source": "/mastodon",
-            "destination": "https://mastodon.social/@noomstuff",
+            "source": "/soundcloud",
+            "destination": "https://soundcloud.com/noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/steam",
+            "destination": "https://steamcommunity.com/id/NoomStuff",
             "permanent": true
         }
     ]
