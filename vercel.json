@@ -15,7 +15,7 @@
             "destination": "https://www.speedrun.com/NoomPlatformer",
             "permanent": true
         },
-                {
+        {
             "source": "/speedrun.com",
             "destination": "https://www.speedrun.com/NoomPlatformer",
             "permanent": true
@@ -75,7 +75,7 @@
             "destination": "https://www.twitch.tv/noomstuff",
             "permanent": true
         },
-                {
+        {
             "source": "/insta",
             "destination": "https://www.instagram.com/noomstuff",
             "permanent": true
