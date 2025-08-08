@@ -127,9 +127,7 @@
 .text-color-lighter { color: var(--text-color-lighter); }
 
 .background-color { background-color: var(--background-color); }
-.background-gradient { background: var(--background-gradient);
-width: 100%;
-height: 100%; }
+.background-gradient { background: var(--background-gradient);}
 
 
 /* ===== Border Utilities ===== */

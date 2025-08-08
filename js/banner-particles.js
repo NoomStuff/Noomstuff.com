@@ -5,8 +5,6 @@ canvas = document.createElement('canvas');
 canvas.style.position = 'absolute';
 canvas.style.left = '0';
 canvas.style.top = '0';
-canvas.style.width = '100%';
-canvas.style.height = '100%';
 canvas.style.zIndex = '-1';
 bannerBackground.appendChild(canvas);
 

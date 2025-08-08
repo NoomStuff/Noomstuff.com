@@ -147,3 +147,24 @@
     font-weight: 300;
     color: var(--text-color-light);
 }
+
+#introduction .profile-picture {
+    transition: transform 1s cubic-bezier(0.25, 1, 0.75, 1);
+}
+
+#introduction:hover .profile-picture {
+    transform: rotate(-5deg);
+}
+
+#introduction .text-gradient-light {
+    background: linear-gradient(135deg, var(--primary-color-light), var(--secondary-color-light), var(--primary-color-light), var(--secondary-color-light));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 100%;
+    transition: background-position 1.2s cubic-bezier(0.25, 1, 0.75, 1);
+    background-position: right;
+}
+
+#introduction:hover .text-gradient-light {
+    background-position: left;
+}
