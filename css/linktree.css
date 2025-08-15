@@ -1,0 +1,70 @@
+#linktree {
+    display: block;
+    background: var(--background-gradient);
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    background-image: url('../img/bubble.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+
+    &:hover {
+        text-decoration: none;
+        z-index: 1;
+        background-color: var(--background-color);
+        transform-origin: top left;
+        scale: 1.1;
+    }
+}
+
+.link i {
+    transition: scale 0.3s ease;
+}
+
+.link:hover i {
+    scale: 1.2;
+}
+
+.link img {
+    transition: scale 0.3s ease;
+}
+
+.link:hover img {
+    scale: 1.025;
+}
+
+.link span {
+    position: absolute;
+    font-weight: 300;
+    transform: scale(0.5) translateY(0%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.link:hover span {
+    z-index: 10;
+    transform: scale(1) translateY(0%);
+    opacity: 0;
+}
+
+.homelink img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
