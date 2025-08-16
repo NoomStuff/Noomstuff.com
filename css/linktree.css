@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: center;
     aspect-ratio: 1 / 1;
+    z-index: 10;
     background-image: url('../img/bubble.png');
     background-size: cover;
     background-position: center;
@@ -22,15 +23,24 @@
     text-decoration: none;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    overflow: hidden;
+    transform-origin: top left;
+    scale: 0.9;
 
     &:hover {
         text-decoration: none;
-        z-index: 1;
+        z-index: 11;
         background-color: var(--background-color);
-        transform-origin: top left;
-        scale: 1.1;
+        scale: 1;
     }
+}
+
+#linktree .link {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+#linktree:has(.link:hover) .link:not(:hover) {
+    opacity: 0.65;
 }
 
 .link i {
@@ -42,6 +52,7 @@
 }
 
 .link img {
+    border-radius: 50%;
     transition: scale 0.3s ease;
 }
 
@@ -51,19 +62,23 @@
 
 .link span {
     position: absolute;
+    font-size: 0.5em;
     font-weight: 300;
-    transform: scale(0.5) translateY(0%);
+    background-color: black;
+    padding: 0 var(--spacing-1);
+    border-radius: var(--spacing-1);
+    transform: scale(0.5) translateY(350%);
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .link:hover span {
-    z-index: 10;
-    transform: scale(1) translateY(0%);
-    opacity: 0;
+    z-index: 1;
+    transform: scale(1) translateY(175%);
+    opacity: 1;
 }
 
-.homelink img {
+.home-link img {
     width: 100%;
     height: 100%;
     border-radius: 50%;

@@ -2,21 +2,16 @@ const linktreeElement = document.getElementById('linktree');
 
 linktreeElement.style.position = 'relative';
 
-const links = [
+const importantLinks = [
     {
         name: "YouTube",
         url: "/youtube",
         icon: "fa-brands fa-youtube"
     },
     {
-        name: "Twitter/X",
-        url: "/twitter",
-        icon: "fa-brands fa-x-twitter"
-    },
-    {
-        name: "GitHub",
-        url: "/github",
-        icon: "fa-brands fa-github"
+        name: "Itch.io",
+        url: "/itch",
+        icon: "fa-brands fa-itch-io"
     },
     {
         name: "Bluesky",
@@ -24,14 +19,57 @@ const links = [
         icon: "fa-brands fa-bluesky"
     },
     {
+        name: "Linktree",
+        url: "/linktree",
+        icon: "fa-brands fa-linktree"
+    },
+    {
+        name: "Instagram",
+        url: "/instagram",
+        icon: "fa-brands fa-instagram"
+    },
+    {
+        name: "GitHub",
+        url: "/github",
+        icon: "fa-brands fa-github"
+    },
+    {
+        name: "Discord",
+        url: "/discord",
+        icon: "fa-brands fa-discord"
+    },
+];
+
+const links = [
+    {
+        name: "Twitter (X)",
+        url: "/twitter",
+        icon: "fa-brands fa-twitter"
+    },
+    {
+        name: "Scratch",
+        url: "/scratch",
+        icon: "fa-brands fa-stripe-s"
+    },
+    {
+        name: "Threads",
+        url: "/threads",
+        icon: "fa-brands fa-threads"
+    },
+    {
         name: "Neocities",
         url: "/neocities",
         icon: "fa-solid fa-globe"
     },
     {
-        name: "Itch.io",
-        url: "/itch",
-        icon: "fa-brands fa-itch-io"
+        name: "TikTok",
+        url: "/tiktok",
+        icon: "fa-brands fa-tiktok"
+    },
+    {
+        name: "Cara",
+        url: "/cara",
+        icon: "fa-solid fa-c"
     },
     {
         name: "Reddit",
@@ -44,14 +82,29 @@ const links = [
         icon: "fa-brands fa-twitch"
     },
     {
-        name: "Instagram",
-        url: "/instagram",
-        icon: "fa-brands fa-instagram"
-    },
-    {
         name: "Facebook",
         url: "/facebook",
         icon: "fa-brands fa-facebook"
+    },
+    {
+        name: "Roblox",
+        url: "/roblox",
+        icon: "fa-brands fa-jira"
+    },
+    {
+        name: "Gamejolt",
+        url: "/gamejolt",
+        icon: "fa-solid fa-bolt"
+    },
+    {
+        name: "Newgrounds",
+        url: "/newgrounds",
+        icon: "fa-solid fa-snowplow"
+    },
+    {
+        name: "Artfight",
+        url: "/artfight",
+        icon: "fa-solid fa-paintbrush"
     },
     {
         name: "Spotify",
@@ -73,23 +126,53 @@ const links = [
 function createLinks() {
     linktreeElement.innerHTML = '';
 
-    const radius = Math.min(linktreeElement.offsetWidth / 2 / 1.2, linktreeElement.offsetHeight / 2 / 1.2) - 20;
-    const linkWidth = radius / 2 / 1.2;
+    const containerRadius = Math.min(linktreeElement.offsetWidth, linktreeElement.offsetHeight) / 2.05;
     const centerX = linktreeElement.offsetWidth / 2;
     const centerY = linktreeElement.offsetHeight / 2;
+    const linkWidth = (2 * containerRadius * Math.sin(Math.PI / links.length)) / (1 + Math.sin(Math.PI / links.length));
+    const radius = containerRadius - linkWidth / 2;
+    let importantLinkWidth = Math.max(8, 2 * radius * Math.sin(Math.PI / importantLinks.length));
+    let importantLinkRadius = radius - (linkWidth + importantLinkWidth) / 2;
+    for (let i = 0; i < importantLinks.length; i++) {
+        importantLinkWidth = 2 * importantLinkRadius * Math.sin(Math.PI / importantLinks.length);
+        importantLinkRadius = radius - (linkWidth + importantLinkWidth) / 2;
+    }
+    const homeRadius = Math.max(8, importantLinkRadius - importantLinkWidth / 2);
+    const homeDiameter = homeRadius * 2;
 
     const linkElement = document.createElement('a');
-    linkElement.className = 'link homelink';
+    linkElement.className = 'link home-link';
     linkElement.href = 'https://noomstuff.com';
     linkElement.target = '_blank';
     linkElement.rel = 'noopener noreferrer';
-    linkElement.innerHTML = `<img src="img/icon.png" alt="NoomStuff Logo" style="width: 100%; height: 100%;">`;
+    linkElement.innerHTML = `<img src="img/icon.png" alt="NoomStuff Logo" style="width: 100%; height: 100%;"> <span>Website</span>`;
     linkElement.style.position = 'absolute';
-    linkElement.style.width = radius + 'px';
+    linkElement.style.width = homeDiameter + 'px';
+    linkElement.style.height = homeDiameter + 'px';
     linkElement.style.left = `${centerX}px`;
     linkElement.style.top = `${centerY}px`;
-    linkElement.style.fontSize = linkWidth + 'px';
+    linkElement.style.fontSize = homeDiameter/ 3 + 'px';
     linktreeElement.appendChild(linkElement);
+
+    importantLinks.forEach((link, i) => {
+        const angle = (2 * Math.PI / importantLinks.length) * i - Math.PI / 2;
+        const x = centerX + importantLinkRadius * Math.cos(angle);
+        const y = centerY + importantLinkRadius * Math.sin(angle);
+
+        const linkElement = document.createElement('a');
+        linkElement.className = 'link important-link';
+        linkElement.href = link.url;
+        linkElement.target = '_blank';
+        linkElement.rel = 'noopener noreferrer';
+        linkElement.innerHTML = `<i class="${link.icon}"></i> <span>${link.name}</span>`;
+        linkElement.style.position = 'absolute';
+        linkElement.style.width = importantLinkWidth + 'px';
+        linkElement.style.height = importantLinkWidth + 'px';
+        linkElement.style.left = `${x}px`;
+        linkElement.style.top = `${y}px`;
+        linkElement.style.fontSize = importantLinkWidth / 3 + 'px';
+        linktreeElement.appendChild(linkElement);
+    });
 
     links.forEach((link, i) => {
         const angle = (2 * Math.PI / links.length) * i - Math.PI / 2;
