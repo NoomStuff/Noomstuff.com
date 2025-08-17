@@ -1,23 +1,25 @@
 {
     "redirects": [
         {
-            "source": "/git",
-            "destination": "https://github.com/noomstuff",
+            "source": "/link",
+            "destination": "/linktree.html",
             "permanent": true
         },
         {
-            "source": "/github",
-            "destination": "https://github.com/noomstuff",
+            "source": "/links",
+            "destination": "/linktree.html",
             "permanent": true
         },
         {
-            "source": "/speedrun",
-            "destination": "https://www.speedrun.com/NoomPlatformer",
+            "source": "/linktree",
+            "destination": "/linktree.html",
             "permanent": true
         },
+
+
         {
-            "source": "/speedrun.com",
-            "destination": "https://www.speedrun.com/NoomPlatformer",
+            "source": "/artfight",
+            "destination": "https://artfight.net/~NoomStuff",
             "permanent": true
         },
         {
@@ -31,32 +33,57 @@
             "permanent": true
         },
         {
-            "source": "/yt",
-            "destination": "https://www.youtube.com/@NoomStuff",
+            "source": "/cara",
+            "destination": "https://cara.app/noomstuff",
             "permanent": true
         },
         {
-            "source": "/youtube",
-            "destination": "https://www.youtube.com/@NoomStuff",
+            "source": "/discord",
+            "destination": "https://discord.com/users/786268151687544842",
             "permanent": true
         },
         {
-            "source": "/bsky",
-            "destination": "https://bsky.app/profile/noomstuff.com",
+            "source": "/discordprofile",
+            "destination": "https://discord.com/users/786268151687544842",
             "permanent": true
         },
         {
-            "source": "/bluesky",
-            "destination": "https://bsky.app/profile/noomstuff.com",
+            "source": "/fb",
+            "destination": "https://www.facebook.com/profile.php?id=100081477097716",
             "permanent": true
         },
         {
-            "source": "/neocities",
-            "destination": "https://noomstuff.neocities.org",
+            "source": "/facebook",
+            "destination": "https://www.facebook.com/profile.php?id=100081477097716",
+            "permanent": true
+        },
+        {
+            "source": "/git",
+            "destination": "https://github.com/noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/github",
+            "destination": "https://github.com/noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/insta",
+            "destination": "https://www.instagram.com/noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/instagram",
+            "destination": "https://www.instagram.com/noomstuff",
             "permanent": true
         },
         {
             "source": "/itch",
+            "destination": "https://noomstuff.itch.io",
+            "permanent": true
+        },
+        {
+            "source": "/itchio",
             "destination": "https://noomstuff.itch.io",
             "permanent": true
         },
@@ -116,18 +143,18 @@
             "permanent": true
         },
         {
-            "source": "/twitch",
-            "destination": "https://www.twitch.tv/noomstuff",
+            "source": "/roblox",
+            "destination": "https://www.roblox.com/users/276125095/profile",
             "permanent": true
         },
         {
-            "source": "/insta",
-            "destination": "https://www.instagram.com/noomstuff",
+            "source": "/scratch",
+            "destination": "https://scratch.mit.edu/users/NoomStuff/",
             "permanent": true
         },
         {
-            "source": "/instagram",
-            "destination": "https://www.instagram.com/noomstuff",
+            "source": "/soundcloud",
+            "destination": "https://soundcloud.com/noomstuff",
             "permanent": true
         },
         {
@@ -141,13 +168,105 @@
             "permanent": true
         },
         {
-            "source": "/soundcloud",
-            "destination": "https://soundcloud.com/noomstuff",
+            "source": "/steam",
+            "destination": "https://steamcommunity.com/id/NoomStuff",
             "permanent": true
         },
         {
-            "source": "/steam",
+            "source": "/steamprofile",
             "destination": "https://steamcommunity.com/id/NoomStuff",
+            "permanent": true
+        },
+        {
+            "source": "/steamcommunity",
+            "destination": "https://steamcommunity.com/id/NoomStuff",
+            "permanent": true
+        },
+        {
+            "source": "/threads",
+            "destination": "https://www.threads.net/@noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/tiktok",
+            "destination": "https://www.tiktok.com/@noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/twitch",
+            "destination": "https://www.twitch.tv/noomstuff",
+            "permanent": true
+        },
+        {
+            "source": "/twitter",
+            "destination": "https://x.com/NoomStuff",
+            "permanent": true
+        },
+        {
+            "source": "/x",
+            "destination": "https://x.com/NoomStuff",
+            "permanent": true
+        },
+        {
+            "source": "/yt",
+            "destination": "https://www.youtube.com/@NoomStuff",
+            "permanent": true
+        },
+        {
+            "source": "/youtube",
+            "destination": "https://www.youtube.com/@NoomStuff",
+            "permanent": true
+        },
+
+
+        {
+            "source": "/np",
+            "destination": "https://noomstuff.itch.io/noomplatformer",
+            "permanent": true
+        },
+        {
+            "source": "/noomplatformer",
+            "destination": "https://noomstuff.itch.io/noomplatformer",
+            "permanent": true
+        },
+        {
+            "source": "/dlmh",
+            "destination": "https://noomstuff.itch.io/dontleafmehangin",
+            "permanent": true
+        },
+        {
+            "source": "/dontleafmehangin",
+            "destination": "https://noomstuff.itch.io/dontleafmehangin",
+            "permanent": true
+        },
+        {
+            "source": "/bz",
+            "destination": "https://polycube2.itch.io/buzzinga",
+            "permanent": true
+        },
+        {
+            "source": "/buzzinga",
+            "destination": "https://polycube2.itch.io/buzzinga",
+            "permanent": true
+        },
+        {
+            "source": "/dl",
+            "destination": "https://noomstuff.itch.io/desktopleafette",
+            "permanent": true
+        },
+        {
+            "source": "/leafette",
+            "destination": "https://noomstuff.itch.io/desktopleafette",
+            "permanent": true
+        },
+        {
+            "source": "/desktoppet",
+            "destination": "https://noomstuff.itch.io/desktopleafette",
+            "permanent": true
+        },
+        {
+            "source": "/desktopleafette",
+            "destination": "https://noomstuff.itch.io/desktopleafette",
             "permanent": true
         }
     ]
