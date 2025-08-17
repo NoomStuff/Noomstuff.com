@@ -142,7 +142,7 @@ function createLinks() {
 
     const linkElement = document.createElement('a');
     linkElement.className = 'link home-link';
-    linkElement.href = 'https://noomstuff.com';
+    linkElement.href = '/';
     linkElement.target = '_blank';
     linkElement.rel = 'noopener noreferrer';
     linkElement.innerHTML = `<img src="img/icon.png" alt="NoomStuff Logo" style="width: 100%; height: 100%;"> <span>Website</span>`;

@@ -1,7 +1,11 @@
 .button-group {
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important;
     gap: var(--spacing-2);
+}
+
+.button-group > * {
+    flex: 1;
 }
 
 .flex-content {

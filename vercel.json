@@ -17,7 +17,7 @@
         },
         {
             "source": "/linktreesite",
-            "destination": "/linktree.html",
+            "destination": "https://linktr.ee/noomstuff",
             "permanent": true
         },
         {

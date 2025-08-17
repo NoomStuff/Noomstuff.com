@@ -149,11 +149,12 @@
 }
 
 #introduction .profile-picture {
-    transition: transform 1s cubic-bezier(0.25, 1, 0.75, 1);
+    scale: 1;
+    transition: scale 0.5s cubic-bezier(0, 1, 0.75, 1);
 }
 
 #introduction:hover .profile-picture {
-    transform: rotate(-5deg);
+    scale: 1.05;
 }
 
 #introduction .text-gradient-light {
