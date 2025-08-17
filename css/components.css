@@ -68,7 +68,7 @@
     z-index: 1;
     background: linear-gradient(120deg, var(--primary-color, #f73878), var(--secondary-color, #5c00dd));
 
-    animation: mouse-trailer 20s infinite linear;
+    animation: mouse-trailer 10s infinite linear;
 }
 
 @keyframes mouse-trailer {
@@ -77,10 +77,10 @@
     }
 
     50% {
-        transform: rotateZ(180deg)  scale(1, 1.5);
+        transform: rotateZ(360deg)  scale(1, 1.5);
     }
 
     100% {
-        transform: rotateZ(360deg) scale(1, 1);
+        transform: rotateZ(720deg) scale(1, 1);
     }
 }

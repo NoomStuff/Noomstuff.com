@@ -20,7 +20,7 @@ const importantLinks = [
     },
     {
         name: "Linktree",
-        url: "/linktree",
+        url: "/linktreesite",
         icon: "fa-brands fa-linktree"
     },
     {
@@ -35,7 +35,7 @@ const importantLinks = [
     },
     {
         name: "Discord",
-        url: "/discord",
+        url: "/discordprofile",
         icon: "fa-brands fa-discord"
     },
 ];

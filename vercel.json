@@ -1,7 +1,22 @@
 {
     "redirects": [
         {
+            "source": "/link",
+            "destination": "/linktree.html",
+            "permanent": true
+        },
+        {
+            "source": "/links",
+            "destination": "/linktree.html",
+            "permanent": true
+        },
+        {
             "source": "/linktree",
+            "destination": "/linktree.html",
+            "permanent": true
+        },
+        {
+            "source": "/linktreesite",
             "destination": "/linktree.html",
             "permanent": true
         },
@@ -43,6 +58,11 @@
         {
             "source": "/facebook",
             "destination": "https://www.facebook.com/profile.php?id=100081477097716",
+            "permanent": true
+        },
+        {
+            "source": "/gamejolt",
+            "destination": "https://gamejolt.com/@NoomStuff",
             "permanent": true
         },
         {
