@@ -65,17 +65,22 @@
     position: absolute;
     pointer-events: none;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color, #f73878), var(--secondary-color, #5c00dd));
     z-index: 1;
+    background: linear-gradient(120deg, var(--primary-color, #f73878), var(--secondary-color, #5c00dd));
 
-    animation: mouse-trailer 20s infinite;
+    animation: mouse-trailer 20s infinite linear;
 }
 
 @keyframes mouse-trailer {
     0% {
-        transform: rotateZ(0deg);
+        transform: rotateZ(0deg) scale(1, 1);
     }
+
+    50% {
+        transform: rotateZ(180deg)  scale(1, 1.5);
+    }
+
     100% {
-        transform: rotateZ(360deg);
+        transform: rotateZ(360deg) scale(1, 1);
     }
 }

@@ -5,6 +5,36 @@
     width: 100vw;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+}
+
+#linktree::before {
+    content: '';
+    position: absolute;
+    top: -32px;
+    left: -32px;
+    width: calc(100vw + 64px);
+    height: calc(100vh + 64px);
+    background-image: url('../img/dot-background.svg');
+    background-size: 32px;
+    background-repeat: repeat;
+    z-index: 0;
+    opacity: 0.05;
+    pointer-events: none;
+
+    animation: backgroundScroll 15s linear infinite;
+
+    will-change: transform;
+    transform: translate(0, 0);
+}
+
+@keyframes backgroundScroll {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(32px, 32px);
+    }
 }
 
 .link {
@@ -29,7 +59,6 @@
     &:hover {
         text-decoration: none;
         z-index: 11;
-        background-color: var(--background-color);
         scale: 1;
     }
 }

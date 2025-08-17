@@ -42,29 +42,9 @@ const importantLinks = [
 
 const links = [
     {
-        name: "Twitter (X)",
-        url: "/twitter",
-        icon: "fa-brands fa-twitter"
-    },
-    {
-        name: "Scratch",
-        url: "/scratch",
-        icon: "fa-brands fa-stripe-s"
-    },
-    {
-        name: "Threads",
-        url: "/threads",
-        icon: "fa-brands fa-threads"
-    },
-    {
-        name: "Neocities",
-        url: "/neocities",
-        icon: "fa-solid fa-globe"
-    },
-    {
-        name: "TikTok",
-        url: "/tiktok",
-        icon: "fa-brands fa-tiktok"
+        name: "Artfight",
+        url: "/artfight",
+        icon: "fa-solid fa-paintbrush"
     },
     {
         name: "Cara",
@@ -72,24 +52,9 @@ const links = [
         icon: "fa-solid fa-c"
     },
     {
-        name: "Reddit",
-        url: "/reddit",
-        icon: "fa-brands fa-reddit"
-    },
-    {
-        name: "Twitch",
-        url: "/twitch",
-        icon: "fa-brands fa-twitch"
-    },
-    {
         name: "Facebook",
         url: "/facebook",
         icon: "fa-brands fa-facebook"
-    },
-    {
-        name: "Roblox",
-        url: "/roblox",
-        icon: "fa-brands fa-jira"
     },
     {
         name: "Gamejolt",
@@ -97,19 +62,29 @@ const links = [
         icon: "fa-solid fa-bolt"
     },
     {
+        name: "Neocities",
+        url: "/neocities",
+        icon: "fa-solid fa-globe"
+    },
+    {
         name: "Newgrounds",
         url: "/newgrounds",
         icon: "fa-solid fa-snowplow"
     },
     {
-        name: "Artfight",
-        url: "/artfight",
-        icon: "fa-solid fa-paintbrush"
+        name: "Reddit",
+        url: "/reddit",
+        icon: "fa-brands fa-reddit"
     },
     {
-        name: "Spotify",
-        url: "/spotify",
-        icon: "fa-brands fa-spotify"
+        name: "Roblox",
+        url: "/roblox",
+        icon: "fa-brands fa-jira"
+    },
+    {
+        name: "Scratch",
+        url: "/scratch",
+        icon: "fa-brands fa-stripe-s"
     },
     {
         name: "SoundCloud",
@@ -117,9 +92,34 @@ const links = [
         icon: "fa-brands fa-soundcloud"
     },
     {
+        name: "Spotify",
+        url: "/spotify",
+        icon: "fa-brands fa-spotify"
+    },
+    {
         name: "Steam",
-        url: "/steam",
+        url: "/steamprofile",
         icon: "fa-brands fa-steam"
+    },
+    {
+        name: "Threads",
+        url: "/threads",
+        icon: "fa-brands fa-threads"
+    },
+    {
+        name: "TikTok",
+        url: "/tiktok",
+        icon: "fa-brands fa-tiktok"
+    },
+    {
+        name: "Twitch",
+        url: "/twitch",
+        icon: "fa-brands fa-twitch"
+    },
+    {
+        name: "Twitter (X)",
+        url: "/twitter",
+        icon: "fa-brands fa-twitter"
     },
 ];
 
