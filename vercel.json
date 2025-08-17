@@ -23,13 +23,13 @@
             "permanent": true
         },
         {
-            "source": "/bsky",
-            "destination": "https://bsky.app/profile/noomstuff.com",
+            "source": "/twitter",
+            "destination": "https://x.com/NoomStuff",
             "permanent": true
         },
         {
-            "source": "/bluesky",
-            "destination": "https://bsky.app/profile/noomstuff.com",
+            "source": "/x",
+            "destination": "https://twitter.com/NoomStuff",
             "permanent": true
         },
         {
@@ -93,18 +93,48 @@
             "permanent": true
         },
         {
-            "source": "ng",
-            "destination": "https://noomstuff.newgrounds.com",
+            "source": "/np",
+            "destination": "https://noomstuff.itch.io/noomplatformer",
             "permanent": true
         },
         {
-            "source": "/newgrounds",
-            "destination": "https://noomstuff.newgrounds.com",
+            "source": "/noomplatformer",
+            "destination": "https://noomstuff.itch.io/noomplatformer",
             "permanent": true
         },
         {
-            "source": "/neocities",
-            "destination": "https://noomstuff.neocities.org",
+            "source": "/dlmh",
+            "destination": "https://noomstuff.itch.io/dontleafmehangin",
+            "permanent": true
+        },
+                {
+            "source": "/dontleafmehangin",
+            "destination": "https://noomstuff.itch.io/dontleafmehangin",
+            "permanent": true
+        },
+        {
+            "source": "/buzz",
+            "destination": "https://polycube2.itch.io/buzzinga",
+            "permanent": true
+        },
+        {
+            "source": "/buzzinga",
+            "destination": "https://polycube2.itch.io/buzzinga",
+            "permanent": true
+        },
+        {
+            "source": "/dl",
+            "destination": "https://noomstuff.itch.io/desktopleafette",
+            "permanent": true
+        },
+        {
+            "source": "/leafette",
+            "destination": "https://noomstuff.itch.io/desktopleafette",
+            "permanent": true
+        },
+        {
+            "source": "/desktopleafette",
+            "destination": "https://noomstuff.itch.io/desktopleafette",
             "permanent": true
         },
         {
@@ -128,13 +158,8 @@
             "permanent": true
         },
         {
-            "source": "/speedrun",
-            "destination": "https://www.speedrun.com/NoomPlatformer",
-            "permanent": true
-        },
-        {
-            "source": "/speedrun.com",
-            "destination": "https://www.speedrun.com/NoomPlatformer",
+            "source": "/facebook",
+            "destination": "https://www.facebook.com/profile.php?id=100081477097716",
             "permanent": true
         },
         {
