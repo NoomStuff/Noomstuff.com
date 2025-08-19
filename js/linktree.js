@@ -123,7 +123,8 @@ const links = [
     },
 ];
 
-function createLinks() {
+function createLinks()
+{
     linktreeElement.innerHTML = '';
 
     const containerRadius = Math.min(linktreeElement.offsetWidth, linktreeElement.offsetHeight) / 2.05;
@@ -133,7 +134,8 @@ function createLinks() {
     const radius = containerRadius - linkWidth / 2;
     let importantLinkWidth = Math.max(8, 2 * radius * Math.sin(Math.PI / importantLinks.length));
     let importantLinkRadius = radius - (linkWidth + importantLinkWidth) / 2;
-    for (let i = 0; i < importantLinks.length; i++) {
+    for (let i = 0; i < importantLinks.length; i++)
+    {
         importantLinkWidth = 2 * importantLinkRadius * Math.sin(Math.PI / importantLinks.length);
         importantLinkRadius = radius - (linkWidth + importantLinkWidth) / 2;
     }
@@ -151,10 +153,11 @@ function createLinks() {
     linkElement.style.height = homeDiameter + 'px';
     linkElement.style.left = `${centerX}px`;
     linkElement.style.top = `${centerY}px`;
-    linkElement.style.fontSize = homeDiameter/ 3 + 'px';
+    linkElement.style.fontSize = homeDiameter / 3 + 'px';
     linktreeElement.appendChild(linkElement);
 
-    importantLinks.forEach((link, i) => {
+    importantLinks.forEach((link, i) =>
+    {
         const angle = (2 * Math.PI / importantLinks.length) * i - Math.PI / 2;
         const x = centerX + importantLinkRadius * Math.cos(angle);
         const y = centerY + importantLinkRadius * Math.sin(angle);
@@ -174,7 +177,8 @@ function createLinks() {
         linktreeElement.appendChild(linkElement);
     });
 
-    links.forEach((link, i) => {
+    links.forEach((link, i) =>
+    {
         const angle = (2 * Math.PI / links.length) * i - Math.PI / 2;
         const x = centerX + radius * Math.cos(angle);
         const y = centerY + radius * Math.sin(angle);
