@@ -25,4 +25,4 @@ function revolveText(id, texts, interval = 2500) {
 }
 
 
-revolveText('revolving-text', ['creative', 'gamedev', 'artist', 'video editor', 'programmer', 'youtuber', 'coder', 'designer', 'developer', 'creator', 'idiot']);
+revolveText('revolving-text', ['creative', 'gamedev', 'artist', 'editor', 'programmer', 'animator', 'youtuber', 'coder', 'designer', 'developer', 'musician', 'creator', 'entertainer', 'idiot']);

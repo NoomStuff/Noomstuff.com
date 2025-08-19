@@ -7,7 +7,7 @@ profileElement.appendChild(popupElement);
 
 const popupText = [
     'Double click!',
-    'triple click!',
+    'Triple click!',
     'Super click!',
     'Mega click!',
     'Ultra click!',
@@ -15,9 +15,13 @@ const popupText = [
     'LEGENDARY!!',
     'MYTHICAL!!',
     'UNREAL!!',
+    'EPIC!!',
+    'AWESOME!!',
     'DIVINE!!',
     'UNBELIEVABLE!!!',
     'EXTRAORDINARY!!!',
+    'INCREDIBLE!!!',
+    'FANTASTIC!!!',
     'BEAST MODE!!!',
     'UNSTOPPABLE!!!',
     'GODLIKE!!!',
