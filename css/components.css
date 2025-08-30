@@ -75,6 +75,15 @@
     opacity: 0;
 }
 
+@media screen and (max-width: 768px) {
+    .tile:hover .button {
+        text-decoration: none;
+        background-position: left;
+        border: 1px solid transparent;
+        color: var(--text-color);
+    }
+}
+
 .tile>div {
     display: flex;
     flex-direction: column;
