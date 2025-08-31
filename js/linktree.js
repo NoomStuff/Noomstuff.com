@@ -196,6 +196,11 @@ function createLinks()
         linkElement.style.fontSize = linkWidth / 3 + 'px';
         linktreeElement.appendChild(linkElement);
     });
+
+    mobileText = document.createElement('p');
+    linktreeElement.appendChild(mobileText);
+    mobileText.id = 'mobile-text';
+    mobileText.innerText = 'Tap to show link names';
 }
 
 createLinks();

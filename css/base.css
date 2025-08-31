@@ -195,3 +195,21 @@ i {
         color: var(--text-color);
     }
 }
+
+@keyframes backgroundScroll {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(32px, 32px);
+    }
+}
+
+@keyframes opacityPulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.75;
+    }
+}

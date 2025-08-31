@@ -22,19 +22,10 @@
     opacity: 0.05;
     pointer-events: none;
 
-    animation: backgroundScroll 15s linear infinite;
+    animation: backgroundScroll 10s linear infinite;
 
     will-change: transform;
     transform: translate(0, 0);
-}
-
-@keyframes backgroundScroll {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(32px, 32px);
-    }
 }
 
 .link {
@@ -86,7 +77,7 @@
 }
 
 .link:hover img {
-    scale: 1.025;
+    scale: 1.02;
 }
 
 .link span {
@@ -111,4 +102,33 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
+}
+
+#mobile-text {
+    display: none;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.75;
+    animation: opacityPulse 4s ease-in-out infinite;
+}
+
+@media screen and (max-width: 768px) {
+    #linktree.mobile-hover.triggered .link span {
+        z-index: 1;
+        transform: scale(1) translateY(175%);
+        opacity: 1;
+    }
+    
+    #mobile-text {
+        position: absolute;
+        display: block;
+        bottom: 2vh;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--text-color);
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+        z-index: 10;
+    }
 }
