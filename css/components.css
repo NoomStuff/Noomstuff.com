@@ -1,3 +1,19 @@
+.background-light {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2);
+    border-radius: var(--spacing-2);
+    background-color: var(--background-color-light);
+}
+
+.background-light * {
+    margin: 0;
+}
+
 .button-group {
     display: flex;
     flex-direction: row !important;
@@ -126,7 +142,7 @@
     opacity: 0;
 }
 
-.profile-popup::before{
+.profile-popup::before {
     content: '';
     position: absolute;
     background-color: black;
