@@ -1,13 +1,22 @@
-.button-group {
+/* ===== Background ===== */
+.background-light {
     display: flex;
-    flex-direction: row !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
     gap: var(--spacing-2);
+    padding: var(--spacing-2);
+    border-radius: var(--spacing-2);
+    background-color: var(--background-color-light);
 }
 
-.button-group>* {
-    flex: 1;
+.background-light * {
+    margin: 0;
 }
 
+
+/* ===== Layout ===== */
 .flex-content {
     display: flex;
     flex-direction: row;
@@ -23,6 +32,7 @@
     width: 100%;
 }
 
+/* ===== Tiles ===== */
 .tile {
     position: relative;
     display: flex;
@@ -87,12 +97,59 @@
 .tile>div {
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-2);
 }
 
 .tile * {
     margin: 0;
 }
 
+.blog.tile {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-3);
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
+}
+
+.blog.tile>figure {
+    position: relative;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+
+    border-radius: var(--spacing-1);
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        max-height: 300px;
+        min-width: unset;
+        aspect-ratio: unset;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blog.tile:hover .button {
+        text-decoration: none;
+        background-position: left;
+        border: 1px solid transparent;
+        color: var(--text-color);
+    }
+}
+
+
+/* ===== Profile Picture ===== */
 .profile-picture {
     display: flex;
     flex-direction: column;
@@ -126,7 +183,7 @@
     opacity: 0;
 }
 
-.profile-popup::before{
+.profile-popup::before {
     content: '';
     position: absolute;
     background-color: black;
@@ -137,6 +194,7 @@
     rotate: 45deg;
 }
 
+/* ===== Mouse Trailer ===== */
 .mouse-trailer-container {
     position: fixed;
     top: 0;

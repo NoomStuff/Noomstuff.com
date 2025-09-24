@@ -26,6 +26,10 @@
     --spacing-3: 2rem;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     scroll-behavior: smooth;
@@ -70,8 +74,16 @@ main {
     margin-bottom: var(--spacing-3);
 }
 
-* {
-    box-sizing: border-box;
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-1);
+    border-top: var(--border-divider);
+
+    * {
+        margin: 0;
+    }
 }
 
 section {
@@ -98,7 +110,9 @@ figure {
     padding: 0;
 }
 
-figure img, figure video, figure iframe {
+figure img,
+figure video,
+figure iframe {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -133,10 +147,25 @@ h2 {
 }
 
 h3 {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1;
+    margin-top: 0.35em;
+}
+
+h4 {
     font-size: 1.5em;
     font-weight: 600;
     line-height: 1;
     margin-top: 0.3em;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--text-color-lighter);
+    margin: 0;
 }
 
 a {
@@ -160,14 +189,55 @@ b {
     color: var(--text-color);
 }
 
-i {
+.button i {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4em;
-    color: var(--text-color);
+    text-align: center;
+    font-size: 1em;
+    scale: 1.25;
+    color: inherit;
 }
 
+.button i.fa-brands {
+    scale: 1.5;
+    margin-right: 0.25rem;
+    margin-left: -0.25rem;
+}
+
+/* ===== Lists ===== */
+ul,
+ol {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
+    color: var(--text-color-light);
+    font-size: 1.1em;
+    line-height: 1.7;
+
+    li {
+        margin: 0;
+        margin-bottom: 0.25rem;
+    }
+
+    p {
+        font-size: 1em;
+        margin: 0;
+        margin-left: -1.5rem;
+    }
+}
+
+ul li::marker {
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+ol li::marker {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+
+/* ===== Buttons ===== */
 .button {
     display: flex;
     flex-direction: row;
@@ -196,19 +266,155 @@ i {
     }
 }
 
+.button-group {
+    display: flex;
+    flex-direction: row !important;
+    gap: var(--spacing-2);
+}
+
+.button-group>* {
+    flex: 1;
+}
+
+
+/* ===== Dividers & Spacers ===== */
+.spacer {
+    height: var(--spacing-2);
+}
+
+.divider {
+    opacity: 0.75;
+    position: relative;
+    height: 0;
+    border-bottom: 2px solid var(--background-color-light);
+    margin: var(--spacing-2) 0;
+}
+
+.divider>* {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0 var(--spacing-2);
+    border-radius: var(--spacing-2);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-size: 1.25em;
+    height: 1.5em;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+/* ===== Code Blocks ===== */
+pre {
+    background: var(--background-color-light) !important;
+    padding: 1rem;
+    border-radius: var(--spacing-1);
+    overflow-x: scroll;
+    margin: var(--spacing-2) 0 !important;
+}
+
+code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    background: none;
+    padding: 0;
+    color: #ccc;
+    background: none;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+code .input {
+    color: #8ef;
+}
+
+pre.collapsible {
+    max-height: 300px;
+    overflow: hidden !important;
+    position: relative;
+    cursor: pointer;
+    transition: max-height 0.4s ease;
+}
+
+pre.collapsible.expanded {
+    max-height: none;
+    overflow: auto;
+}
+
+pre.collapsible::after {
+    content: "Show more ↓";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0.5rem;
+    background: linear-gradient(to top, var(--background-color-light), transparent);
+    color: var(--text-color-lighter);
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+pre.collapsible.expanded::after {
+    content: "Show less ↑";
+    background: none;
+}
+
+pre[data-header] {
+    position: relative;
+    border-radius: var(--spacing-1);
+}
+
+pre[data-header]::before {
+    content: attr(data-header);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: right;
+    color: #ccc;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+    border-top-left-radius: var(--spacing-1);
+    border-top-right-radius: var(--spacing-1);
+    font-family: var(--font-family);
+    user-select: none;
+}
+
+
+/* ===== Animations ===== */
 @keyframes backgroundScroll {
     0% {
         transform: translate(0, 0);
     }
+
     100% {
         transform: translate(32px, 32px);
     }
 }
 
 @keyframes opacityPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.5;
     }
+
     50% {
         opacity: 0.75;
     }
