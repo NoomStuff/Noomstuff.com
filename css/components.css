@@ -1,3 +1,4 @@
+/* ===== Background ===== */
 .background-light {
     display: flex;
     flex-direction: column;
@@ -14,16 +15,8 @@
     margin: 0;
 }
 
-.button-group {
-    display: flex;
-    flex-direction: row !important;
-    gap: var(--spacing-2);
-}
 
-.button-group>* {
-    flex: 1;
-}
-
+/* ===== Layout ===== */
 .flex-content {
     display: flex;
     flex-direction: row;
@@ -39,6 +32,7 @@
     width: 100%;
 }
 
+/* ===== Tiles ===== */
 .tile {
     position: relative;
     display: flex;
@@ -103,12 +97,59 @@
 .tile>div {
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-2);
 }
 
 .tile * {
     margin: 0;
 }
 
+.blog.tile {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-3);
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
+}
+
+.blog.tile>figure {
+    position: relative;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+
+    border-radius: var(--spacing-1);
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        max-height: 300px;
+        min-width: unset;
+        aspect-ratio: unset;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blog.tile:hover .button {
+        text-decoration: none;
+        background-position: left;
+        border: 1px solid transparent;
+        color: var(--text-color);
+    }
+}
+
+
+/* ===== Profile Picture ===== */
 .profile-picture {
     display: flex;
     flex-direction: column;
@@ -153,6 +194,7 @@
     rotate: 45deg;
 }
 
+/* ===== Mouse Trailer ===== */
 .mouse-trailer-container {
     position: fixed;
     top: 0;

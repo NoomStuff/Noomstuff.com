@@ -38,6 +38,8 @@
     font-weight: 900;
     letter-spacing: 0.025em;
     line-height: 1;
+    padding-bottom: 0.1em;
+    border-bottom: 1px solid var(--text-color-light);
 
     @media screen and (max-width: 1080px) {
         font-size: 5em;
@@ -55,7 +57,7 @@
 #banner-text h3 {
     font-size: 2em;
     margin-top: 10px;
-    font-weight: 300;
+    font-weight: 200;
     line-height: 1.25;
     text-align: right;
 

@@ -12,40 +12,41 @@ trailerElement.style.height = trailerSize + 'px';
 
 trailerContainer.appendChild(trailerElement);
 
-trailerElement.style.left = `${window.innerWidth / 2 - trailerElement.offsetWidth / 2}px`;
-trailerElement.style.top = `${window.innerHeight / 2 - trailerElement.offsetHeight / 2}px`;
+let targetX = window.innerWidth / 2 - trailerElement.offsetWidth / 2;
+let targetY = window.innerHeight / 2 - trailerElement.offsetHeight / 2;
+let currentX = targetX;
+let currentY = targetY;
+
+trailerElement.style.left = `${currentX}px`;
+trailerElement.style.top = `${currentY}px`;
 
 let mouseTimeout;
 
-document.body.addEventListener('pointermove', (event) => {
+document.body.addEventListener('pointermove', (event) => 
+{
     clearTimeout(mouseTimeout);
 
-    const x = event.clientX - trailerElement.offsetWidth / 2;
-    const y = event.clientY - trailerElement.offsetHeight / 2;
-
-    trailerElement.style.left = `${x}px`;
-    trailerElement.style.top = `${y}px`;
-
-    trailerElement.animate({
-        left: `${x}px`,
-        top: `${y}px`
-    }, {
-        duration: 4000,
-        fill: 'forwards'
-    });
+    targetX = event.clientX - trailerElement.offsetWidth / 2;
+    targetY = event.clientY - trailerElement.offsetHeight / 2;
 
     mouseTimeout = setTimeout(moveToCenter, 5000);
 });
 
-function moveToCenter() {
-    const x = window.innerWidth / 2 - trailerElement.offsetWidth / 2;
-    const y = window.innerHeight / 2 - trailerElement.offsetHeight / 2;
-
-    trailerElement.animate({
-        left: `${x}px`,
-        top: `${y}px`
-    }, {
-        duration: 4000,
-        fill: 'forwards'
-    });
+function moveToCenter() 
+{
+    targetX = window.innerWidth / 2 - trailerElement.offsetWidth / 2;
+    targetY = window.innerHeight / 2 - trailerElement.offsetHeight / 2;
 }
+
+function animate() 
+{
+    currentX += (targetX - currentX) * 0.02;
+    currentY += (targetY - currentY) * 0.02;
+
+    trailerElement.style.left = `${currentX}px`;
+    trailerElement.style.top = `${currentY}px`;
+
+    requestAnimationFrame(animate);
+}
+
+animate();
