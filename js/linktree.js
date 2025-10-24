@@ -38,6 +38,7 @@ const importantLinks = [
         url: "/discordprofile",
         icon: "fa-brands fa-discord"
     },
+
 ];
 
 const links = [
@@ -123,8 +124,9 @@ const links = [
     },
 ];
 
-function createLinks()
-{
+let hasPlayed = false;
+
+function createLinks() {
     linktreeElement.innerHTML = '';
 
     const containerRadius = Math.min(linktreeElement.offsetWidth, linktreeElement.offsetHeight) / 2.05;
@@ -134,8 +136,7 @@ function createLinks()
     const radius = containerRadius - linkWidth / 2;
     let importantLinkWidth = Math.max(8, 2 * radius * Math.sin(Math.PI / importantLinks.length));
     let importantLinkRadius = radius - (linkWidth + importantLinkWidth) / 2;
-    for (let i = 0; i < importantLinks.length; i++)
-    {
+    for (let i = 0; i < importantLinks.length; i++) {
         importantLinkWidth = 2 * importantLinkRadius * Math.sin(Math.PI / importantLinks.length);
         importantLinkRadius = radius - (linkWidth + importantLinkWidth) / 2;
     }
@@ -154,47 +155,52 @@ function createLinks()
     linkElement.style.left = `${centerX}px`;
     linkElement.style.top = `${centerY}px`;
     linkElement.style.fontSize = homeDiameter / 3 + 'px';
+    if (!hasPlayed) linkElement.classList.add('bubble-animate');
     linktreeElement.appendChild(linkElement);
 
-    importantLinks.forEach((link, i) =>
-    {
-        const angle = (2 * Math.PI / importantLinks.length) * i - Math.PI / 2;
-        const x = centerX + importantLinkRadius * Math.cos(angle);
-        const y = centerY + importantLinkRadius * Math.sin(angle);
+    importantLinks.forEach((link, i) => {
+        setTimeout(() => {
+            const angle = (2 * Math.PI / importantLinks.length) * i - Math.PI / 2;
+            const x = centerX + importantLinkRadius * Math.cos(angle);
+            const y = centerY + importantLinkRadius * Math.sin(angle);
 
-        const linkElement = document.createElement('a');
-        linkElement.className = 'link important-link';
-        linkElement.href = link.url;
-        linkElement.target = '_blank';
-        linkElement.rel = 'noopener noreferrer';
-        linkElement.innerHTML = `<i class="${link.icon}"></i> <span>${link.name}</span>`;
-        linkElement.style.position = 'absolute';
-        linkElement.style.width = importantLinkWidth + 'px';
-        linkElement.style.height = importantLinkWidth + 'px';
-        linkElement.style.left = `${x}px`;
-        linkElement.style.top = `${y}px`;
-        linkElement.style.fontSize = importantLinkWidth / 3 + 'px';
-        linktreeElement.appendChild(linkElement);
+            const linkElement = document.createElement('a');
+            linkElement.className = 'link important-link';
+            linkElement.href = link.url;
+            linkElement.target = '_blank';
+            linkElement.rel = 'noopener noreferrer';
+            linkElement.innerHTML = `<i class="${link.icon}"></i> <span>${link.name}</span>`;
+            linkElement.style.position = 'absolute';
+            linkElement.style.width = importantLinkWidth + 'px';
+            linkElement.style.height = importantLinkWidth + 'px';
+            linkElement.style.left = `${x}px`;
+            linkElement.style.top = `${y}px`;
+            linkElement.style.fontSize = importantLinkWidth / 3 + 'px';
+            if (!hasPlayed) linkElement.classList.add('bubble-animate');
+            linktreeElement.appendChild(linkElement);
+        }, i * (hasPlayed ? 0 : 50));
     });
 
-    links.forEach((link, i) =>
-    {
-        const angle = (2 * Math.PI / links.length) * i - Math.PI / 2;
-        const x = centerX + radius * Math.cos(angle);
-        const y = centerY + radius * Math.sin(angle);
+    links.forEach((link, i) => {
+        setTimeout(() => {
+            const angle = (2 * Math.PI / links.length) * i - Math.PI / 2;
+            const x = centerX + radius * Math.cos(angle);
+            const y = centerY + radius * Math.sin(angle);
 
-        const linkElement = document.createElement('a');
-        linkElement.className = 'link';
-        linkElement.href = link.url;
-        linkElement.target = '_blank';
-        linkElement.rel = 'noopener noreferrer';
-        linkElement.innerHTML = `<i class="${link.icon}"></i> <span>${link.name}</span>`;
-        linkElement.style.position = 'absolute';
-        linkElement.style.width = linkWidth + 'px';
-        linkElement.style.left = `${x}px`;
-        linkElement.style.top = `${y}px`;
-        linkElement.style.fontSize = linkWidth / 3 + 'px';
-        linktreeElement.appendChild(linkElement);
+            const linkElement = document.createElement('a');
+            linkElement.className = 'link';
+            linkElement.href = link.url;
+            linkElement.target = '_blank';
+            linkElement.rel = 'noopener noreferrer';
+            linkElement.innerHTML = `<i class="${link.icon}"></i> <span>${link.name}</span>`;
+            linkElement.style.position = 'absolute';
+            linkElement.style.width = linkWidth + 'px';
+            linkElement.style.left = `${x}px`;
+            linkElement.style.top = `${y}px`;
+            linkElement.style.fontSize = linkWidth / 3 + 'px';
+            if (!hasPlayed) linkElement.classList.add('bubble-animate');
+            linktreeElement.appendChild(linkElement);
+        }, (importantLinks.length + i) * (hasPlayed ? 0 : 50));
     });
 
     mobileText = document.createElement('p');
@@ -203,6 +209,11 @@ function createLinks()
     mobileText.innerText = 'Tap to show link names';
 }
 
+
 createLinks();
 
-window.addEventListener('resize', createLinks);
+window.addEventListener('resize', () =>
+{
+    hasPlayed = true;
+    createLinks();
+});
