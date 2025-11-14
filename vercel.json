@@ -126,16 +126,6 @@
             "permanent": true
         },
         {
-            "source": "/speedrun",
-            "destination": "https://www.speedrun.com/NoomPlatformer",
-            "permanent": true
-        },
-        {
-            "source": "/speedrun.com",
-            "destination": "https://www.speedrun.com/NoomPlatformer",
-            "permanent": true
-        },
-        {
             "source": "/spotify",
             "destination": "https://open.spotify.com/artist/25F77z70IT3oK0I4weGOym",
             "permanent": true
@@ -146,12 +136,12 @@
             "permanent": true
         },
         {
-            "source": "/steamprofile",
+            "source": "/steam-profile",
             "destination": "https://steamcommunity.com/id/NoomStuff",
             "permanent": true
         },
         {
-            "source": "/steamcommunity",
+            "source": "/steam-community",
             "destination": "https://steamcommunity.com/id/NoomStuff",
             "permanent": true
         },
@@ -192,22 +182,22 @@
         },
         {
             "source": "/np",
-            "destination": "https://noomstuff.itch.io/noomplatformer",
+            "destination": "https://noomstuff.itch.io/",
             "permanent": true
         },
         {
-            "source": "/noomplatformer",
-            "destination": "https://noomstuff.itch.io/noomplatformer",
+            "source": "/",
+            "destination": "https://noomstuff.itch.io/",
             "permanent": true
         },
         {
             "source": "/dlmh",
-            "destination": "https://noomstuff.itch.io/dontleafmehangin",
+            "destination": "https://noomstuff.itch.io/dont-leaf-me-hangin",
             "permanent": true
         },
         {
-            "source": "/dontleafmehangin",
-            "destination": "https://noomstuff.itch.io/dontleafmehangin",
+            "source": "/dont-leaf-me-hangin",
+            "destination": "https://noomstuff.itch.io/dont-leaf-me-hangin",
             "permanent": true
         },
         {
