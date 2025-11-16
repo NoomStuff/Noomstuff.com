@@ -1,6 +1,26 @@
 {
     "redirects": [
         {
+            "source": "/social",
+            "destination": "/linktree.html",
+            "permanent": true
+        },
+        {
+            "source": "/socials",
+            "destination": "/linktree.html",
+            "permanent": true
+        },
+        {
+            "source": "/media",
+            "destination": "/linktree.html",
+            "permanent": true
+        },
+        {
+            "source": "/linktreesite",
+            "destination": "https://linktr.ee/noomstuff",
+            "permanent": true
+        },
+        {
             "source": "/link",
             "destination": "https://links.noomstuff.com",
             "permanent": true
