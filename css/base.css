@@ -172,11 +172,12 @@ a {
     color: var(--text-color);
     font-weight: 500;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border 0.3s ease;
+    border-bottom: 2px solid var(--primary-color-dark);
+}
 
-    &:hover {
-        text-decoration: underline;
-    }
+a:hover {
+    border-bottom: 2px solid var(--primary-color);
 }
 
 p {
@@ -304,96 +305,6 @@ ol li::marker {
     height: 1.5em;
     font-weight: 300;
     white-space: nowrap;
-}
-
-/* ===== Code Blocks ===== */
-pre {
-    background: var(--background-color-light) !important;
-    padding: 1rem;
-    border-radius: var(--spacing-1);
-    overflow-x: scroll;
-    margin: var(--spacing-2) 0 !important;
-}
-
-code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 1em;
-    text-align: left;
-    background: none;
-    padding: 0;
-    color: #ccc;
-    background: none;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-}
-
-code .input {
-    color: #8ef;
-}
-
-pre.collapsible {
-    max-height: 300px;
-    overflow: hidden !important;
-    position: relative;
-    cursor: pointer;
-    transition: max-height 0.4s ease;
-}
-
-pre.collapsible.expanded {
-    max-height: none;
-    overflow: auto;
-}
-
-pre.collapsible::after {
-    content: "Show more ↓";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 0.5rem;
-    background: linear-gradient(to top, var(--background-color-light), transparent);
-    color: var(--text-color-lighter);
-    cursor: pointer;
-    font-size: 0.9em;
-}
-
-pre.collapsible.expanded::after {
-    content: "Show less ↑";
-    background: none;
-}
-
-pre[data-header] {
-    position: relative;
-    border-radius: var(--spacing-1);
-}
-
-pre[data-header]::before {
-    content: attr(data-header);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    font-weight: 400;
-    text-align: right;
-    color: #ccc;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
-    border-top-left-radius: var(--spacing-1);
-    border-top-right-radius: var(--spacing-1);
-    font-family: var(--font-family);
-    user-select: none;
 }
 
 
