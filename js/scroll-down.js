@@ -7,6 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const distance = window.innerHeight * 0.95;
 
-    window.scrollBy({ top: distance, left: 0, behavior: 'smooth' });
+    window.scrollTo({ top: distance, left: 0, behavior: 'smooth' });
   });
 });

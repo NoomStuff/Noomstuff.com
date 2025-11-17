@@ -22,17 +22,17 @@
         },
         {
             "source": "/link",
-            "destination": "/linktree.html",
+            "destination": "https://links.noomstuff.com",
             "permanent": true
         },
         {
             "source": "/links",
-            "destination": "/linktree.html",
+            "destination": "/https://links.noomstuff.com",
             "permanent": true
         },
         {
             "source": "/linktree",
-            "destination": "/linktree.html",
+            "destination": "/https://links.noomstuff.com",
             "permanent": true
         },
         {
@@ -66,7 +66,7 @@
             "permanent": true
         },
         {
-            "source": "/discordprofile",
+            "source": "/discord-profile",
             "destination": "https://discord.com/users/786268151687544842",
             "permanent": true
         },
@@ -147,12 +147,12 @@
         },
         {
             "source": "/speedrun",
-            "destination": "https://www.speedrun.com/NoomPlatformer",
+            "destination": "https://www.speedrun.com/",
             "permanent": true
         },
         {
             "source": "/speedrun.com",
-            "destination": "https://www.speedrun.com/NoomPlatformer",
+            "destination": "https://www.speedrun.com/",
             "permanent": true
         },
         {
@@ -166,12 +166,12 @@
             "permanent": true
         },
         {
-            "source": "/steamprofile",
+            "source": "/steam-profile",
             "destination": "https://steamcommunity.com/id/NoomStuff",
             "permanent": true
         },
         {
-            "source": "/steamcommunity",
+            "source": "/steam-community",
             "destination": "https://steamcommunity.com/id/NoomStuff",
             "permanent": true
         },
@@ -212,22 +212,32 @@
         },
         {
             "source": "/np",
-            "destination": "https://noomstuff.itch.io/noomplatformer",
+            "destination": "https://noomstuff.itch.io/noom-platformer",
             "permanent": true
         },
         {
             "source": "/noomplatformer",
-            "destination": "https://noomstuff.itch.io/noomplatformer",
+            "destination": "https://noomstuff.itch.io/noom-platformer",
+            "permanent": true
+        },
+        {
+            "source": "/noom-platformer",
+            "destination": "https://noomstuff.itch.io/noom-platformer",
             "permanent": true
         },
         {
             "source": "/dlmh",
-            "destination": "https://noomstuff.itch.io/dontleafmehangin",
+            "destination": "https://noomstuff.itch.io/dont-leaf-me-hangin",
+            "permanent": true
+        },
+        {
+            "source": "/dont-leaf-me-hangin",
+            "destination": "https://noomstuff.itch.io/dont-leaf-me-hangin",
             "permanent": true
         },
         {
             "source": "/dontleafmehangin",
-            "destination": "https://noomstuff.itch.io/dontleafmehangin",
+            "destination": "https://noomstuff.itch.io/dont-leaf-me-hangin",
             "permanent": true
         },
         {
@@ -242,22 +252,37 @@
         },
         {
             "source": "/dl",
-            "destination": "https://noomstuff.itch.io/desktopleafette",
+            "destination": "https://noomstuff.itch.io/desktop-leafette",
             "permanent": true
         },
         {
             "source": "/leafette",
-            "destination": "https://noomstuff.itch.io/desktopleafette",
+            "destination": "https://noomstuff.itch.io/desktop-leafette",
             "permanent": true
         },
         {
             "source": "/desktopleafette",
-            "destination": "https://noomstuff.itch.io/desktopleafette",
+            "destination": "https://noomstuff.itch.io/desktop-leafette",
+            "permanent": true
+        },
+                {
+            "source": "/desktop-leafette",
+            "destination": "https://noomstuff.itch.io/desktop-leafette",
+            "permanent": true
+        },
+        {
+            "source": "/pet",
+            "destination": "https://noomstuff.itch.io/desktop-leafette",
             "permanent": true
         },
         {
             "source": "/desktoppet",
-            "destination": "https://noomstuff.itch.io/desktopleafette",
+            "destination": "https://noomstuff.itch.io/desktop-leafette",
+            "permanent": true
+        },
+        {
+            "source": "/desktop-pet",
+            "destination": "https://noomstuff.itch.io/desktop-leafette",
             "permanent": true
         }
     ]
