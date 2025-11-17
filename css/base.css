@@ -190,21 +190,6 @@ b {
     color: var(--text-color);
 }
 
-.button i {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 1em;
-    scale: 1.25;
-    color: inherit;
-}
-
-.button i.fa-brands {
-    scale: 1.5;
-    margin-right: 0.25rem;
-    margin-left: -0.25rem;
-}
 
 /* ===== Lists ===== */
 ul,
@@ -214,12 +199,12 @@ ol {
     color: var(--text-color-light);
     font-size: 1.1em;
     line-height: 1.7;
-
+    
     li {
         margin: 0;
         margin-bottom: 0.25rem;
     }
-
+    
     p {
         font-size: 1em;
         margin: 0;
@@ -258,13 +243,29 @@ ol li::marker {
     transition: background-position 0.6s cubic-bezier(0.25, 1, 0.75, 1), border-color 0.6s cubic-bezier(0.25, 1, 0.75, 1), color 0.6s cubic-bezier(0.25, 1, 0.75, 1);
     border: 1px solid var(--primary-color);
     background-position: right;
+}
 
-    &:hover {
-        text-decoration: none;
-        background-position: left;
-        border: 1px solid transparent;
-        color: var(--text-color);
-    }
+.button:hover {
+    text-decoration: none;
+    background-position: left;
+    border: 1px solid transparent;
+    color: var(--text-color);
+}
+
+.button i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1em;
+    scale: 1.25;
+    color: inherit;
+}
+
+.button i.fa-brands {
+    scale: 1.5;
+    margin-right: 0.25rem;
+    margin-left: -0.25rem;
 }
 
 .button-group {
@@ -279,16 +280,21 @@ ol li::marker {
 
 
 /* ===== Dividers & Spacers ===== */
+.bottom {
+    margin-top: auto !important;
+}
+
 .spacer {
     height: var(--spacing-2);
 }
 
 .divider {
-    opacity: 0.75;
     position: relative;
+    opacity: 0.75;
     height: 0;
     border-bottom: 2px solid var(--background-color-light);
     margin: var(--spacing-2) 0;
+    margin-bottom: var(--spacing-3);
 }
 
 .divider>* {

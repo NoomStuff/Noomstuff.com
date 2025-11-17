@@ -48,13 +48,15 @@
     width: 100%;
     height: 100%;
     border-radius: var(--spacing-1);
-    transition: scale 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, width 0.3s ease, height, 0.3s ease, opacity 0.3s ease;
     scale: 1;
     opacity: 0;
 }
 
 .tile:hover::before {
-    scale: 1.075;
+    transform: translate(calc(var(--spacing-3) / -2), calc(var(--spacing-3) / -2));
+    width: calc(100% + var(--spacing-3));
+    height: calc(100% + var(--spacing-3));
     opacity: 1;
 }
 
@@ -125,17 +127,30 @@
     flex-shrink: 0;
     aspect-ratio: 4 / 3;
     height: auto;
-    width: auto;
+    width: 400px;
     max-width: 100%;
 
     border-radius: var(--spacing-1);
     overflow: hidden;
+}
 
-    @media screen and (max-width: 768px) {
+.blog.tile h6 {
+    margin-bottom: -0.75rem !important;
+}
+
+@media screen and (max-width: 768px) {
+    .blog.tile>figure {
         width: 100%;
         max-height: 300px;
         min-width: unset;
         aspect-ratio: unset;
+    }
+
+    .blog.tile:hover .button {
+        text-decoration: none;
+        background-position: left;
+        border: 1px solid transparent;
+        color: var(--text-color);
     }
 }
 

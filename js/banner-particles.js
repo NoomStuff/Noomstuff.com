@@ -111,7 +111,9 @@ prewarmParticles();
 window.addEventListener('resize', prewarmParticles);
 
 function spawnParticle() {
-  triangleParticles.push(new TriangleParticle(getBannerRect()));
+  if (!animationPaused) {
+    triangleParticles.push(new TriangleParticle(getBannerRect()));
+  }
 }
 
 const rect = getBannerRect();

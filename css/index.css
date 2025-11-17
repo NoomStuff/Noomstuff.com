@@ -76,6 +76,7 @@
     bottom: var(--spacing-3);
     transform: translateX(-50%);
     z-index: 2;
+    border: none !important;
 }
 
 #banner-arrow:hover {
