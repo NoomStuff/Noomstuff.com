@@ -177,6 +177,7 @@ a {
 }
 
 a:hover {
+    color: white;
     border-bottom: 2px solid var(--primary-color);
 }
 
@@ -257,13 +258,12 @@ ol li::marker {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 1em;
-    scale: 1.25;
+    font-size: 1.25em;
     color: inherit;
 }
 
 .button i.fa-brands {
-    scale: 1.5;
+    font-size: 1.5em;
     margin-right: 0.25rem;
     margin-left: -0.25rem;
 }
