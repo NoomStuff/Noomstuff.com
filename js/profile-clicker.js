@@ -27,7 +27,31 @@ const popupText = [
     'GODLIKE!!!',
 ];
 
-let clickCount = 0;
+const popupTextRandom = [
+    'WILD',
+    'SUPER',
+    'INSANE',
+    'HYPER',
+    'ULTRA',
+    'MEGA',
+    'COLOSSAL',
+    'LEGENDARY',
+    'MYTHICAL',
+    'UNREAL',
+    'EPIC',
+    'AWESOME',
+    'DIVINE',
+    'UNBELIEVABLE',
+    'EXTRAORDINARY',
+    'INCREDIBLE',
+    'FANTASTIC',
+    'BEAST MODE',
+    'UNSTOPPABLE',
+    'GODLIKE',
+];
+
+
+let clickCount = -1;
 let clickTimeout;
 
 profileElement.addEventListener('click', () =>
@@ -46,14 +70,14 @@ profileElement.addEventListener('click', () =>
 
     const exclaimationText = "!".repeat(Math.floor(clickCount / 100) + 3);
 
-    if (clickCount > 1)
+    if (clickCount > 0)
     {
-        if (clickCount < popupText.length + 2)
+        if (clickCount < popupText.length + 1)
         {
-            popupElement.textContent = popupText[clickCount - 2];
+            popupElement.textContent = popupText[clickCount - 1];
         } else
         {
-            popupElement.textContent = `GODLIKE x${clickCount}${exclaimationText}`;
+            popupElement.textContent = `${popupTextRandom[Math.floor(Math.random() * popupTextRandom.length)]} x${clickCount}${exclaimationText}`;
         }
 
         popupElement.animate([
@@ -79,7 +103,7 @@ profileElement.addEventListener('click', () =>
                 fill: 'forwards'
             });
 
-            clickCount = 0;
+            clickCount = -1;
         }, 2000);
     }
 });

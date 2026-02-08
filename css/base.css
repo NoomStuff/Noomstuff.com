@@ -30,6 +30,12 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background-color: rgba(163, 109, 242, 0.75);
+    color: white;
+    text-shadow: 2px 2px 2px var(--background-color);
+}
+
 html,
 body {
     scroll-behavior: smooth;
@@ -200,12 +206,12 @@ ol {
     color: var(--text-color-light);
     font-size: 1.1em;
     line-height: 1.7;
-    
+
     li {
         margin: 0;
         margin-bottom: 0.25rem;
     }
-    
+
     p {
         font-size: 1em;
         margin: 0;
