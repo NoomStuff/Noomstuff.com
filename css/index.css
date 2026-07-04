@@ -31,15 +31,16 @@
 #banner-text p {
     font-size: 1.25em;
     font-weight: 300;
+    color: var(--text-color-lighter);
 }
 
 #banner-text h1 {
     font-size: 6em;
     font-weight: 900;
-    letter-spacing: 0.025em;
+    letter-spacing: 0;
     line-height: 1;
     padding-bottom: 0.1em;
-    border-bottom: 1px solid var(--text-color-light);
+    border-bottom: 2px solid var(--text-color-lighter);
 
     @media screen and (max-width: 1080px) {
         font-size: 5em;
@@ -60,6 +61,7 @@
     font-weight: 200;
     line-height: 1.25;
     text-align: right;
+    color: var(--text-color-light);
 
     @media screen and (max-width: 768px) {
         font-size: 1.4em;
