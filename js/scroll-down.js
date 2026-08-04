@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   arrow.addEventListener('click', (element) => {
     element.preventDefault();
 
-    const distance = window.innerHeight * 0.95;
+    const distance = window.innerHeight * 0.925;
 
     window.scrollTo({ top: distance, left: 0, behavior: 'smooth' });
   });

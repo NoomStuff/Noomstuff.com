@@ -1,0 +1,36 @@
+const maxTilt = 2.5;
+const tileScale = 1.005;
+
+const wrappers = document.querySelectorAll(".tile-hover-tilt");
+
+wrappers.forEach((wrapper) => {
+  const tile = wrapper.querySelector(".tile");
+
+  if (!tile) {
+    return;
+  }
+
+  wrapper.style.perspective = "800px";
+  wrapper.style.perspectiveOrigin = "center";
+
+  wrapper.addEventListener("mouseenter", () => {
+    tile.style.transition =
+      "transform 300ms cubic-bezier(0.2, 1.25, 0.3, 1)";
+  });
+
+  wrapper.addEventListener("mousemove", (event) => {
+    const rect = wrapper.getBoundingClientRect();
+    const offsetX = (event.clientX - rect.left) / rect.width - 0.5;
+    const offsetY = (event.clientY - rect.top) / rect.height - 0.5;
+    const rotateX = -offsetY * maxTilt * 2;
+    const rotateY = offsetX * maxTilt * 2;
+
+    tile.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${tileScale})`;
+  });
+
+  wrapper.addEventListener("mouseleave", () => {
+    tile.style.transition =
+      "transform 500ms cubic-bezier(0.4, 2.4, 0.4, 1)";
+    tile.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+  });
+});
