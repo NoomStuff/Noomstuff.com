@@ -1,7 +1,7 @@
-const maxTilt = 2.5;
+const maxTilt = 4;
 const tileScale = 1.005;
 
-const wrappers = document.querySelectorAll(".tile-hover-tilt");
+const wrappers = document.querySelectorAll(".hover-tilt");
 
 wrappers.forEach((wrapper) => {
   const tile = wrapper.querySelector(".tile");
@@ -22,8 +22,10 @@ wrappers.forEach((wrapper) => {
     const rect = wrapper.getBoundingClientRect();
     const offsetX = (event.clientX - rect.left) / rect.width - 0.5;
     const offsetY = (event.clientY - rect.top) / rect.height - 0.5;
-    const rotateX = -offsetY * maxTilt * 2;
-    const rotateY = offsetX * maxTilt * 2;
+    const sizeFactor = Math.min(1, 320 / Math.max(rect.width, rect.height));
+    const tilt = maxTilt * sizeFactor * 2;
+    const rotateX = -offsetY * tilt;
+    const rotateY = offsetX * tilt;
 
     tile.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${tileScale})`;
   });

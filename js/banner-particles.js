@@ -89,7 +89,7 @@ window.addEventListener('resize', resizecanvas);
 function prewarmParticles() {
   const rect = getBannerRect();
   const widthFactor = rect.width / 1920;
-  const initialCount = Math.round(100 + widthFactor * 100);
+  const initialCount = Math.round(200 + widthFactor * 200);
   triangleParticles = [];
   for (let i = 0; i < initialCount; i++) {
     const particle = new TriangleParticle(rect);

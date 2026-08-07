@@ -175,7 +175,7 @@ h6 {
 
 a:not(.button) {
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     transition: color 300ms ease, border 300ms ease;
     border-bottom: 2px solid var(--primary-color-dark);
@@ -183,7 +183,7 @@ a:not(.button) {
 
 a:not(.button):hover {
     color: white;
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
 }
 
 p {
