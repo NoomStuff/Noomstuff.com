@@ -4,7 +4,7 @@ const tileScale = 1.005;
 const wrappers = document.querySelectorAll(".hover-tilt");
 
 wrappers.forEach((wrapper) => {
-  const tile = wrapper.querySelector(".tile");
+  const tile = wrapper.children[0];
 
   if (!tile) {
     return;
