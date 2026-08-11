@@ -1,18 +1,28 @@
 {
     "redirects": [
         {
+            "source": "/blog",
+            "destination": "https://blog.noomstuff.com",
+            "permanent": true
+        },
+        {
+            "source": "/posts",
+            "destination": "https://blog.noomstuff.com",
+            "permanent": true
+        },
+        {
             "source": "/social",
-            "destination": "/https://links.noomstuff.com",
+            "destination": "https://links.noomstuff.com",
             "permanent": true
         },
         {
             "source": "/socials",
-            "destination": "/https://links.noomstuff.com",
+            "destination": "https://links.noomstuff.com",
             "permanent": true
         },
         {
             "source": "/media",
-            "destination": "/https://links.noomstuff.com",
+            "destination": "https://links.noomstuff.com",
             "permanent": true
         },
         {
@@ -22,12 +32,12 @@
         },
         {
             "source": "/links",
-            "destination": "/https://links.noomstuff.com",
+            "destination": "https://links.noomstuff.com",
             "permanent": true
         },
         {
             "source": "/linktree",
-            "destination": "/https://links.noomstuff.com",
+            "destination": "https://links.noomstuff.com",
             "permanent": true
         }
     ]
