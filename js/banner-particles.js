@@ -20,32 +20,41 @@ class TriangleParticle {
     this.targetScale = (1 + widthFactor) + distanceFromCenter * widthFactor + Math.random() * 2;
     this.scale = 0.1;
     this.y = rect.height + 200;
-    this.speed = 0.05 + Math.random() * 0.15;
-    this.speedUpRate = Math.random() * 0.0005;
-    this.waveAmplitude = 15 + Math.random() * 20;
-    this.waveFrequency = 0.002 + Math.random() * 0.01;
+
+    this.speed = Math.random() * 25;
+    this.speedUpRate = 0.5 + Math.random() * 2;
+
+    this.waveAmplitude = 15 + Math.random() * 25;
+    this.waveFrequency = 0.2 + Math.random() * 0.6;
     this.wavePhase = Math.random() * Math.PI * 2;
+
     this.rotation = Math.random() * 360;
-    this.rotationSpeed = (Math.random() - 0.5) * 0.3;
-    this.shrinkRate = 0.0015 + Math.random() * 0.004;
+    this.rotationSpeed = (Math.random() - 0.5) * 24;
+
+    this.shrinkRate = 0.1 + Math.random() * 0.25;
+
     this.lifetime = 0;
     this.alive = true;
   }
 
-  updateParticle(context) {
-    this.y -= this.speed;
-    this.speed += this.speedUpRate;
-    this.rotation += this.rotationSpeed;
-    this.targetScale -= this.shrinkRate;
-    const time = Math.min(1, this.lifetime / 240);
-    this.scale = (1 - (1 - time) * (1 - time)) * this.targetScale;
-    this.lifetime++;
-    if (this.y + 100 <= -200 || (this.scale <= 0.1 && this.lifetime > 120)) {
-      this.alive = false;
-      return;
-    }
+  updateParticle(deltaTime) {
+    this.y -= this.speed * deltaTime;
+    this.speed += this.speedUpRate * deltaTime;
+    this.rotation += this.rotationSpeed * deltaTime;
+    this.targetScale -= this.shrinkRate * deltaTime;
 
+    const time = Math.min(1, this.lifetime / 4);
+    this.scale = (1 - (1 - time) * (1 - time)) * this.targetScale;
+    this.lifetime += deltaTime;
+
+    if (this.y + 100 <= -200 || (this.scale <= 0.1 && this.lifetime > 2)) {
+      this.alive = false;
+    }
+  }
+
+  drawParticle(context) {
     const waveOffset = Math.sin(this.wavePhase + this.lifetime * this.waveFrequency) * this.waveAmplitude;
+
     context.save();
     context.translate(this.x + waveOffset + 50, this.y - 43.3);
     context.rotate((this.rotation * Math.PI) / 180);
@@ -56,17 +65,30 @@ class TriangleParticle {
     context.lineTo(0, -43.3);
     context.closePath();
     context.fillStyle = this.color;
+
     if (this.scale < 1) {
       context.globalAlpha = Math.max(0, Math.min(1, this.scale));
     }
+
     context.fill();
     context.restore();
+  }
+
+  updateAndDraw(context, deltaTime) {
+    this.updateParticle(deltaTime);
+
+    if (this.alive) {
+      this.drawParticle(context);
+    }
   }
 }
 
 let triangleParticles = [];
 
 let animationPaused = false;
+
+let spawnInterval = 100;
+let spawnTimer = 0;
 
 function getBannerRect() {
   return bannerBackground.getBoundingClientRect();
@@ -82,31 +104,40 @@ function resizecanvas() {
   const rect = getBannerRect();
   canvas.width = rect.width;
   canvas.height = rect.height;
+
+  const widthFactor = rect.width / 1920;
+  spawnInterval = Math.max(5, Math.round(180 - widthFactor * 120));
 }
+
 resizecanvas();
 window.addEventListener('resize', resizecanvas);
 
 function prewarmParticles() {
   const rect = getBannerRect();
   const widthFactor = rect.width / 1920;
-  const initialCount = Math.round(200 + widthFactor * 200);
+  const initialCount = Math.round(240 - widthFactor * 50);
+
   triangleParticles = [];
+
   for (let i = 0; i < initialCount; i++) {
     const particle = new TriangleParticle(rect);
     const frames = Math.floor(Math.random() * 1200);
-    for (let f = 0; f < frames; f++) {
-      particle.y -= particle.speed;
-      particle.speed += particle.speedUpRate;
-      particle.rotation += particle.rotationSpeed;
-      particle.targetScale -= particle.shrinkRate;
-      const time = Math.min(1, particle.lifetime / 240);
-      particle.scale = (1 - (1 - time) * (1 - time)) * particle.targetScale;
-      particle.lifetime++;
-      if (particle.y + 100 <= -200 || (particle.scale <= 0.1 && particle.lifetime > 120)) break;
+    const prewarmTime = frames / 60;
+
+    let elapsedTime = 0;
+    const deltaTime = 1 / 60;
+
+    while (elapsedTime < prewarmTime && particle.alive) {
+      particle.updateParticle(deltaTime);
+      elapsedTime += deltaTime;
     }
+
     triangleParticles.push(particle);
   }
+
+  spawnTimer = 0;
 }
+
 prewarmParticles();
 window.addEventListener('resize', prewarmParticles);
 
@@ -116,28 +147,39 @@ function spawnParticle() {
   }
 }
 
-const rect = getBannerRect();
-const widthFactor = rect.width / 1920;
-const spawnInterval = Math.max(20, Math.round(60 - widthFactor * 40));
-setInterval(spawnParticle, spawnInterval);
+function animateParticles(currentTime) {
+  const deltaTime = Math.min((currentTime - animateParticles.lastTime) / 1000, 0.1);
+  animateParticles.lastTime = currentTime;
 
-function animateParticles() {
   if (!animationPaused) {
-    resizecanvas();
     context.clearRect(0, 0, canvas.width, canvas.height);
-    let aliveParticles = [];
+
+    spawnTimer += deltaTime * 1000;
+
+    while (spawnTimer >= spawnInterval) {
+      spawnParticle();
+      spawnTimer -= spawnInterval;
+    }
+
+    const aliveParticles = [];
+
     for (let i = 0; i < triangleParticles.length; i++) {
-      const p = triangleParticles[i];
-      if (p.alive) {
-        p.updateParticle(context);
-        aliveParticles.push(p);
+      const particle = triangleParticles[i];
+
+      if (particle.alive) {
+        particle.updateAndDraw(context, deltaTime);
+        aliveParticles.push(particle);
       }
     }
+
     triangleParticles = aliveParticles;
   }
+
   requestAnimationFrame(animateParticles);
 }
-animateParticles();
+
+animateParticles.lastTime = performance.now();
+requestAnimationFrame(animateParticles);
 
 function checkBannerView() {
   const banner = document.getElementById('banner-background');
@@ -145,6 +187,7 @@ function checkBannerView() {
   const rect = banner.getBoundingClientRect();
   animationPaused = rect.bottom < 0;
 }
+
 window.addEventListener('scroll', checkBannerView);
 window.addEventListener('resize', checkBannerView);
 checkBannerView();
