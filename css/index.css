@@ -133,25 +133,33 @@
 
 /* ===== Introduction Section ===== */
 #introduction {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#introduction .profile {
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     text-align: left;
-    gap: 1rem;
-    white-space: nowrap;
 
-    @media screen and (max-width: 640px) {
+    gap: 1rem;
+    border-radius: 3rem 3rem 1.5rem 1.5rem;
+    padding: 1rem;
+    white-space: nowrap;
+    background-color: var(--background-color-light);
+
+    @media screen and (max-width: 768px) {
         flex-direction: column;
     }
 }
 
-#introduction * {
-    margin: 0;
-}
-
 #introduction h2 {
+    margin: 0;
+
     @media screen and (max-width: 480px) {
         font-size: 1.75em;
     }
@@ -164,6 +172,7 @@
     color: var(--text-color-light);
 }
 
+/* Profile Picture */
 #introduction .profile-picture {
     scale: 1;
     transition: scale 500ms cubic-bezier(0.2, 2.4, 0.2, 1);
@@ -177,6 +186,7 @@
     scale: 0.95;
 }
 
+/* Gradient Text */
 #introduction .text-gradient-light {
     background: linear-gradient(135deg, var(--primary-color-light), var(--secondary-color-light), var(--primary-color-light), var(--secondary-color-light));
     background-clip: text;
@@ -188,4 +198,76 @@
 
 #introduction:hover .text-gradient-light {
     background-position: left;
+}
+
+
+/* ===== Introduction Links ===== */
+#introduction .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#introduction .links>* {
+    padding: 0 0.25em;
+    flex: 1 1 0;
+    transition:
+        flex 500ms cubic-bezier(0.25, 2.4, 0.25, 1),
+        padding 500ms cubic-bezier(0.25, 2.4, 0.25, 1);
+}
+
+#introduction .links>*:hover {
+    flex: 1.25 1 0;
+    padding: 0 0.5em;
+}
+
+/* First and Last links */
+#introduction .links>*:first-child {
+    padding-left: 0 !important;
+    border-bottom-left-radius: 3rem !important;
+    overflow: hidden;
+}
+
+#introduction .links>*:last-child {
+    padding-right: 0 !important;
+    border-bottom-right-radius: 3rem !important;
+    overflow: hidden;
+}
+
+
+/* All Socials Button */
+#introduction .links>.all-socials-button {
+    flex: 0 0 auto;
+}
+
+#introduction .links>.all-socials-button .button {
+    gap: 0rem;
+}
+
+#introduction .links>.all-socials-button .button>span {
+    display: grid;
+    grid-template-columns: 0fr;
+    overflow: hidden;
+    transition: grid-template-columns 1000ms cubic-bezier(0.25, 1, 0.25, 1);
+}
+
+#introduction .links>.all-socials-button .button>span>span {
+    min-width: 0;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1081px) {
+    #introduction .links>.all-socials-button:hover .button {
+        gap: 0.5rem;
+    }
+
+    #introduction .links>.all-socials-button:hover .button>span {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #introduction .links .button>span {
+        display: none;
+    }
 }

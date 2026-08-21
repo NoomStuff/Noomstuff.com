@@ -130,7 +130,6 @@ function generateShakeKeyframes(intensity, steps = 50) {
 
     frames.push({ transform: 'translate(0, 0) rotate(0deg)' });
 
-    console.log('Generated shake keyframes:', frames);
     return frames;
 }
 
@@ -160,7 +159,7 @@ profileElement.addEventListener('click', () => {
         }
 
         popupElement.animate([
-            { opacity: 0, transform: 'translateY(-20px)' },
+            { opacity: 0, transform: 'translateY(-16px)' },
             { opacity: 1, transform: 'translateY(0)' }
         ], {
             duration: 500,
@@ -168,7 +167,7 @@ profileElement.addEventListener('click', () => {
             fill: 'forwards'
         });
 
-        popupTextElement.style.webkitTextFillColor = `rgba(255, 255, 255, ${Math.max(0, Math.min(1, 1 - (clickCount - 20) / 180))}`;
+        popupTextElement.style.webkitTextFillColor = `rgba(192, 192, 192, ${Math.max(0, Math.min(1, 1 - (clickCount - 20) / 180))}`;
         popupTextElement.style.animationDuration = `${Math.max(0.5, 3 - clickCount / 500)}s`;
 
         const shakeIntensity = Math.max(0, Math.min((clickCount - 100) / 250, 8));
@@ -187,7 +186,7 @@ profileElement.addEventListener('click', () => {
         clickTimeout = setTimeout(() => {
             popupElement.animate([
                 { opacity: 1, transform: 'translateY(0)' },
-                { opacity: 0, transform: 'translateY(-10px)' }
+                { opacity: 0, transform: 'translateY(-16px)' }
             ], {
                 duration: 750,
                 easing: 'cubic-bezier(0.2, 1.1, 0.6, 1.025)',
