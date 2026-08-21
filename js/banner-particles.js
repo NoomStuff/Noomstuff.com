@@ -106,7 +106,7 @@ function resizecanvas() {
   canvas.height = rect.height;
 
   const widthFactor = rect.width / 1920;
-  spawnInterval = Math.max(5, Math.round(180 - widthFactor * 120));
+  spawnInterval = Math.max(5, Math.round(160 - widthFactor * 100));
 }
 
 resizecanvas();
@@ -188,6 +188,22 @@ function checkBannerView() {
   animationPaused = rect.bottom < 0;
 }
 
+function animateIn() {
+  canvas.style.transform = 'translateY(100px)';
+  canvas.style.opacity = '0';
+
+  canvas.animate([
+    { transform: 'translateY(100px)', opacity: '0' },
+    { transform: 'translateY(0)', opacity: '1' }
+  ], {
+    duration: 1000,
+    easing: 'cubic-bezier(0.1, 1, 0.6, 1.025)',
+    fill: 'forwards'
+  });
+}
+
 window.addEventListener('scroll', checkBannerView);
 window.addEventListener('resize', checkBannerView);
+window.addEventListener('resize', animateIn);
 checkBannerView();
+animateIn();

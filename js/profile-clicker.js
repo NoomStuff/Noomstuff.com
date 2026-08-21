@@ -5,6 +5,10 @@ const popupElement = document.createElement('span');
 popupElement.className = 'profile-popup';
 profileElement.appendChild(popupElement);
 
+const popupTextElement = document.createElement('span');
+popupTextElement.className = 'profile-popup-text';
+popupElement.appendChild(popupTextElement);
+
 const popupText = [
     'Double click!',
     'Triple click!',
@@ -12,50 +16,128 @@ const popupText = [
     'Mega click!',
     'Ultra click!',
     'Hyper click!',
-    'LEGENDARY!!',
-    'MYTHICAL!!',
-    'UNREAL!!',
     'EPIC!!',
     'AWESOME!!',
-    'DIVINE!!',
+    'FANTASTIC!!',
+    'UNREAL!!',
+    'INCREDIBLE!!',
+    'EXTRAORDINARY!!',
     'UNBELIEVABLE!!!',
-    'EXTRAORDINARY!!!',
-    'INCREDIBLE!!!',
-    'FANTASTIC!!!',
+    'DIVINE!!!',
+    'LEGENDARY!!!',
+    'MYTHICAL!!!',
     'BEAST MODE!!!',
     'UNSTOPPABLE!!!',
     'GODLIKE!!!',
 ];
 
 const popupTextRandom = [
-    'WILD',
-    'SUPER',
-    'INSANE',
-    'HYPER',
-    'ULTRA',
     'MEGA',
-    'COLOSSAL',
-    'LEGENDARY',
-    'MYTHICAL',
-    'UNREAL',
+    'SUPER',
+    'ULTRA',
+    'HYPER',
+
     'EPIC',
     'AWESOME',
-    'DIVINE',
-    'UNBELIEVABLE',
-    'EXTRAORDINARY',
-    'INCREDIBLE',
     'FANTASTIC',
+    'UNREAL',
+    'INCREDIBLE',
+    'EXTRAORDINARY',
+    'UNBELIEVABLE',
+    'DIVINE',
+    'LEGENDARY',
+    'MYTHICAL',
     'BEAST MODE',
     'UNSTOPPABLE',
     'GODLIKE',
+
+    'WILD',
+    'INSANE',
+    'COLOSSAL',
+    'TITANIC',
+    'MONSTROUS',
+    'ASTONISHING',
+    'BREATHTAKING',
+    'MINDBLOWING',
+    'STAGGERING',
+    'STUPENDOUS',
+    'SPECTACULAR',
+    'PHENOMENAL',
+    'EXCEPTIONAL',
+    'MARVELOUS',
+    'ASTOUNDING',
+    'TERRIFIC',
+    'FANTABULOUS',
+    'WONDERFUL',
+    'FABULOUS',
+    'SENSATIONAL',
+    'BRILLIANT',
+    'RAVISHING',
+    'DAZZLING',
+    'RADIANT',
+    'ELECTRIFYING',
+    'THUNDEROUS',
+    'RAMPAGE',
+    'DOMINATING',
+    'OVERPOWERING',
+    'UNRELENTING',
+    'UNYIELDING',
+    'JAWDROPPING',
+    'MINDBLOWING',
+    'COSMIC',
+    'GALACTIC',
+    'INTERSTELLAR',
+    'ASTRONOMICAL',
+    'COMBO',
+    'ULTIMATE',
+    'SUPREME',
+    'EARTH SHATTERING',
+    'LIFE CHANGING',
+    'ZENITH',
+    'APEX',
+    'PINNACLE',
+    'PEAK',
+    'ALPHA',
+    'OMEGA',
+    'ASTOUNDING',
+    'STUNNING',
+    'EXHILARATING',
+    'THRILLING',
+    'EXHILARATING',
+    'FLAWLESS',
+    'IMPECCABLE',
+    'UNMATCHED',
+    'UNPARALLELED',
+    'UNPRECEDENTED',
+    'WOW',
+    'GREAT',
+    'COOL',
+    'NEAT',
+    'SUGOI',
+    'HEARTSTOPPING',
+    'FLASHY',
 ];
 
+function generateShakeKeyframes(intensity, steps = 50) {
+    const frames = [{ transform: 'translate(0, 0) rotate(0deg)' }];
+
+    for (let i = 0; i < steps; i++) {
+        const x = (Math.random() * 2 - 1) * intensity;
+        const y = (Math.random() * 2 - 1) * intensity;
+        const r = (Math.random() * 2 - 1) * (intensity * 0.25);
+        frames.push({ transform: `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) rotate(${r.toFixed(2)}deg)` });
+    }
+
+    frames.push({ transform: 'translate(0, 0) rotate(0deg)' });
+
+    console.log('Generated shake keyframes:', frames);
+    return frames;
+}
 
 let clickCount = -1;
 let clickTimeout;
 
-profileElement.addEventListener('click', () =>
-{
+profileElement.addEventListener('click', () => {
     profileImage.animate([
         { transform: 'rotate(0deg)' },
         { transform: 'rotate(360deg)' }
@@ -70,14 +152,11 @@ profileElement.addEventListener('click', () =>
 
     const exclaimationText = "!".repeat(Math.floor(clickCount / 100) + 3);
 
-    if (clickCount > 0)
-    {
-        if (clickCount < popupText.length + 1)
-        {
-            popupElement.textContent = popupText[clickCount - 1];
-        } else
-        {
-            popupElement.textContent = `${popupTextRandom[Math.floor(Math.random() * popupTextRandom.length)]} x${clickCount}${exclaimationText}`;
+    if (clickCount > 0) {
+        if (clickCount < popupText.length + 1) {
+            popupTextElement.textContent = popupText[clickCount - 1];
+        } else {
+            popupTextElement.textContent = `${popupTextRandom[Math.floor(Math.random() * popupTextRandom.length)]} x${clickCount}${exclaimationText}`;
         }
 
         popupElement.animate([
@@ -89,11 +168,23 @@ profileElement.addEventListener('click', () =>
             fill: 'forwards'
         });
 
+        popupTextElement.style.webkitTextFillColor = `rgba(255, 255, 255, ${Math.max(0, Math.min(1, 1 - (clickCount - 20) / 180))}`;
+        popupTextElement.style.animationDuration = `${Math.max(0.5, 3 - clickCount / 500)}s`;
+
+        const shakeIntensity = Math.max(0, Math.min((clickCount - 100) / 250, 8));
+
+        popupTextElement.animate(
+            generateShakeKeyframes(shakeIntensity),
+            {
+                duration: 1000,
+                easing: 'cubic-bezier(0.2, 1.1, 0.6, 1.025)',
+                fill: 'forwards'
+            }
+        );
 
         clearTimeout(clickTimeout);
 
-        clickTimeout = setTimeout(() =>
-        {
+        clickTimeout = setTimeout(() => {
             popupElement.animate([
                 { opacity: 1, transform: 'translateY(0)' },
                 { opacity: 0, transform: 'translateY(-10px)' }
@@ -104,7 +195,7 @@ profileElement.addEventListener('click', () =>
             });
 
             clickCount = -1;
-        }, 2000);
+        }, 2000 + clickCount);
     }
 });
 

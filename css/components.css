@@ -32,6 +32,26 @@
     width: 100%;
 }
 
+/* ===== Animate in ===== */
+
+.animate-in {
+    animation: transition-in cubic-bezier(0.25, 1, 0.75, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+@keyframes transition-in {
+    from {
+        transform: translateY(5rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 /* ===== Tiles ===== */
 .tile {
     position: relative;
@@ -194,13 +214,31 @@
     font-size: 1em;
     font-weight: 300;
     text-wrap: nowrap;
-    background-color: black;
-    padding: 0 0.5rem;
-    border-radius: 1.5rem;
-    background-color: black;
-    z-index: 10;
+    padding: 0.25em 0.5rem;
+    z-index: 1;
     opacity: 0;
+    border-radius: 9999px;
+    background-color: black;
 }
+
+.profile-popup-text {
+    display: block;
+    background: linear-gradient(135deg, var(--primary-color-light), var(--secondary-color-light), var(--primary-color-light), var(--secondary-color-light));
+    background-size: 300% 100%;
+    background-clip: text;
+    animation: popup-text-cycle 3s linear infinite;
+}
+
+@keyframes popup-text-cycle {
+    from {
+        background-position: left;
+    }
+
+    to {
+        background-position: right;
+    }
+}
+
 
 .profile-popup::before {
     content: '';
@@ -211,6 +249,7 @@
     top: -5px;
     left: calc(50% - 5px);
     rotate: 45deg;
+    z-index: -1;
 }
 
 /* ===== Mouse Trailer ===== */

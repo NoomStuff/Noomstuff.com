@@ -9,8 +9,22 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/index.css">
 
+    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis();
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    </script>
+
     <script src="js/banner-particles.js" defer></script>
+    <script src="js/banner-seam-transition.js" defer></script>
     <script src="js/scroll-down.js" defer></script>
+    <script src="js/text-letter-animation.js" defer></script>
     <script src="js/random-greeting.js" defer></script>
     <script src="js/revolving-text.js" defer></script>
     <script src="js/profile-clicker.js" defer></script>
@@ -40,9 +54,10 @@
         <div id="banner-background">
             <section id="banner">
                 <div id="banner-text">
-                    <p>Welcome to</p>
-                    <h1>NoomStuff.com</h1>
-                    <h4>“Part-time gamedev,<br>Full-time idiot”</h4>
+                    <svg id="banner-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 50" vector-effect="non-scaling-stroke">
+                        <use href="media/logo.svg" />
+                    </svg>
+                    <h4 id="banner-subtitle">“Part-time gamedev, Full-time idiot”</h4>
                 </div>
                 <a href="#banner-arrow" id="banner-arrow">
                     <i class="fa-solid fa-chevron-down"></i>
@@ -50,7 +65,7 @@
             </section>
         </div>
 
-        <section id="introduction" class="background-light">
+        <section id="introduction" class="background-light animate-in">
             <figure class="profile-picture">
                 <img src="media/profile.png" alt="NoomStuff's profile picture" draggable="false">
             </figure>
@@ -62,11 +77,11 @@
 
 
         <section>
-            <div class="divider">
+            <div class="divider animate-in">
                 <h6>My Games</h6>
             </div>
             <div class="grid-content">
-                <div class="hover-tilt">
+                <div class="hover-tilt animate-in">
                     <article class="tile">
                         <figure>
                             <img src="media/desktop-leafette/thumbnail.png" draggable="false">
@@ -83,7 +98,7 @@
                     </article>
                 </div>
 
-                <div class="hover-tilt">
+                <div class="hover-tilt animate-in">
                     <article class="tile">
                         <figure>
                             <img src="media/konstrukt/thumbnail.png" draggable="false">
@@ -100,7 +115,7 @@
                     </article>
                 </div>
 
-                <div class="hover-tilt">
+                <div class="hover-tilt animate-in">
                     <article class="tile">
                         <figure>
                             <img src="media/buzzinga/thumbnail.png" draggable="false">
@@ -117,7 +132,7 @@
                     </article>
                 </div>
 
-                <div class="hover-tilt">
+                <div class="hover-tilt animate-in">
                     <article class="tile">
                         <figure>
                             <img src="media/dont-leaf-me-hangin/thumbnail.png" draggable="false">
@@ -134,7 +149,7 @@
                     </article>
                 </div>
 
-                <div class="hover-tilt">
+                <div class="hover-tilt animate-in">
                     <article class="tile">
                         <figure>
                             <img src="media/noom-platformer/thumbnail.png" draggable="false">
@@ -157,10 +172,10 @@
         </section>
 
         <section>
-            <div class="divider">
+            <div class="divider animate-in">
                 <h6>Latest Blogpost</h6>
             </div>
-            <div class="hover-tilt">
+            <div class="hover-tilt animate-in">
                 <article class="blog tile">
                     <div>
                         <h6>September 24th 2025</h6>
@@ -176,7 +191,7 @@
         </section>
 
         <footer>
-            <div class="divider"></div>
+            <div class="divider animate-in"></div>
             <h3>This page is under construction...</h3>
             <p>Check back later to see new content!</p>
         </footer>
